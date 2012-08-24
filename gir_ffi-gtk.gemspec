@@ -10,10 +10,7 @@ Gem::Specification.new do |s|
   s.email = ["matijs@matijs.net"]
   s.homepage = "http://www.github.com/mvz/gir_ffi-gtk"
 
-  s.rdoc_options = ["--main", "README.rdoc"]
-
-  s.files = Dir['{lib,test,tasks,examples}/**/*', "*.rdoc", "Rakefile", "COPYING.LIB"] & `git ls-files -z`.split("\0")
-  s.extra_rdoc_files = ["README.rdoc"]
+  s.files = Dir['{lib,test,tasks,examples}/**/*', "*.md", "Rakefile", "COPYING.LIB"] & `git ls-files -z`.split("\0")
   s.test_files = `git ls-files -z -- test`.split("\0")
 
   s.add_runtime_dependency(%q<gir_ffi>, ["~> 0.4.0"])
