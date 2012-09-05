@@ -1,7 +1,3 @@
-#
-# Based on the 'Hello world' Gtk+ tutorial example at
-# http://library.gnome.org/devel/gtk-tutorial/2.90/c39.html#SEC-HELLOWORLD
-#
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 require 'gir_ffi-gtk3'
 
