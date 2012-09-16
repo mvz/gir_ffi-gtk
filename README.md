@@ -2,7 +2,7 @@
 
 GirFFI-based bindings for Gtk+. Supports both Gtk+ 2 and Gtk+ 3.
 
-## Useage
+## Usage
 
 Gtk2:
 
@@ -30,7 +30,7 @@ See the `examples/` directory for more examples.
 
 ## License
 
-Copyright (c) 2012 Matijs van Zuijlen
+Copyright &copy; 2012 [Matijs van Zuijlen](http://www.matijs.net)
 
 GirFFI-Gtk is free software, distributed under the terms of the GNU Lesser
 General Public License, version 2.1 or later. See the file COPYING.LIB for
