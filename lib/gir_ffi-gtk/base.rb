@@ -1,3 +1,5 @@
+require 'gir_ffi-gtk/menu'
+
 module Gtk
   _setup_method "init"
 
