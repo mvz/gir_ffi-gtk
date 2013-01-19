@@ -12,7 +12,7 @@ describe Gtk do
           ["baz", "qux", "zonk"]
         end
       end
-      stub(Gtk)._setup_method { }
+      mock(Gtk).setup_method("init") { }
 
       load 'gir_ffi-gtk/base.rb'
     end

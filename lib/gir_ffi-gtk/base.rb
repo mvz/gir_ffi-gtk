@@ -1,7 +1,7 @@
 require 'gir_ffi-gtk/menu'
 
 module Gtk
-  _setup_method "init"
+  setup_method "init"
 
   def self.init_with_auto_argv
     my_args = init_without_auto_argv [$0, *ARGV]
