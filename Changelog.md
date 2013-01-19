@@ -1,3 +1,7 @@
+### 0.5.0 / 2013-01-19
+
+* Update dependency on GirFFI
+
 ### 0.4.1 / 2012-09-22
 
 * New TreeView example (thanks, Kasper Johansen)
