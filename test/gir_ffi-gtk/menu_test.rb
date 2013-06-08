@@ -1,7 +1,5 @@
 require File.expand_path('../test_helper.rb', File.dirname(__FILE__))
 
-require 'gir_ffi-gtk3'
-
 describe Gtk::Menu do
   describe "#popup" do
     it "delegates to popup_for_device" do

@@ -15,7 +15,7 @@ Thread.abort_on_exception = true
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-require 'gir_ffi'
+require 'gir_ffi-gtk3'
 
 class MiniTest::Unit::TestCase
   include RR::Adapters::TestUnit
