@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.test_files = `git ls-files -z -- test`.split("\0")
 
   s.add_runtime_dependency('gir_ffi', ["~> 0.5.0"])
-  s.add_development_dependency('minitest', ["~> 4.5"])
+  s.add_development_dependency('minitest', ["~> 5.0"])
   s.add_development_dependency('rr', ["~> 1.0.4"])
   s.add_development_dependency('rake', ["~> 10.0.3"])
 

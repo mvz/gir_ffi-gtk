@@ -7,7 +7,6 @@ if RUBY_VERSION >= "1.9" and ENV["SIMPLECOV"]
   SimpleCov.start
 end
 
-require 'minitest/spec'
 require 'minitest/autorun'
 require 'rr'
 
@@ -17,7 +16,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'gir_ffi-gtk3'
 
-class MiniTest::Unit::TestCase
+class Minitest::Test
   include RR::Adapters::TestUnit
 
   def assert_nothing_raised
