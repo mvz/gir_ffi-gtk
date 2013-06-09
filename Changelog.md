@@ -1,3 +1,7 @@
+### 0.6.0 / 2013-06-09
+
+* Update dependency on GirFFI
+
 ### 0.5.0 / 2013-01-19
 
 * Update dependency on GirFFI

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "gir_ffi-gtk"
-  s.version = "0.5.0"
+  s.version = "0.6.0"
 
   s.summary = "GirFFI-based Ruby bindings for Gtk+ 2 and 3"
 
