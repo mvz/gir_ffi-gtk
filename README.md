@@ -2,6 +2,8 @@
 
 GirFFI-based bindings for Gtk+. Supports both Gtk+ 2 and Gtk+ 3.
 
+[![Build Status](https://secure.travis-ci.org/mvz/gir_ffi-gtk.png)](http://travis-ci.org/mvz/gir_ffi-gtk)
+
 ## Usage
 
 Gtk2:
