@@ -1,12 +1,18 @@
 require 'rake/testtask'
 
 namespace :test do
-  Rake::TestTask.new(:run) do |t|
+  Rake::TestTask.new(:gtk3) do |t|
     t.libs = ['lib']
     t.test_files = FileList['test/**/*_test.rb']
     t.ruby_opts += ["-w"]
   end
+
+  Rake::TestTask.new(:gtk2) do |t|
+    t.libs = ['lib']
+    t.test_files = FileList['test/**/*_test.rb']
+    t.ruby_opts += ["-rgir_ffi-gtk2",  "-w"]
+  end
 end
 
 desc 'Run unit tests'
-task :test => ['test:run']
+task :test => ['test:gtk3', 'test:gtk2']

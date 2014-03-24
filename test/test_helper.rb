@@ -15,7 +15,9 @@ require 'rr'
 
 Thread.abort_on_exception = true
 
-require 'gir_ffi-gtk3'
+unless Object.const_defined? :Gtk
+  require 'gir_ffi-gtk3'
+end
 
 class Minitest::Test
   def assert_nothing_raised
