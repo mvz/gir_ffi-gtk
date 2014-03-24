@@ -8,12 +8,9 @@ module Gtk
     remaining.shift
     ARGV.replace remaining
   end
+
   class << self
     alias init_without_auto_argv init
     alias init init_with_auto_argv
   end
 end
-
-Gtk.class_eval do
-end
-
