@@ -17,8 +17,6 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'gir_ffi-gtk3'
 
 class Minitest::Test
-  include RR::Adapters::TestUnit
-
   def assert_nothing_raised
     yield
     assert true
