@@ -15,8 +15,6 @@ require 'rr'
 
 Thread.abort_on_exception = true
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-
 require 'gir_ffi-gtk3'
 
 class Minitest::Test
