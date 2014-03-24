@@ -1,4 +1,4 @@
-require File.expand_path('../test_helper.rb', File.dirname(__FILE__))
+require 'test_helper'
 
 describe Gtk::Menu do
   unless GObjectIntrospection::IRepository.default.find_by_name('Gtk', 'Menu').find_method('popup')
