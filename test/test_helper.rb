@@ -2,9 +2,12 @@ if RUBY_PLATFORM == 'java'
   require 'rubygems'
 end
 
-if RUBY_VERSION >= "1.9" and ENV["SIMPLECOV"]
+begin
   require 'simplecov'
-  SimpleCov.start
+  SimpleCov.start do
+    add_filter "/test/"
+  end
+rescue LoadError
 end
 
 require 'minitest/autorun'

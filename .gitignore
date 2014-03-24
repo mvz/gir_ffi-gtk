@@ -1,3 +1,4 @@
 Gemfile.lock
 gir_ffi-gtk*.gem
 /tmp
+/coverage
