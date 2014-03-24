@@ -57,33 +57,4 @@ describe "In the generated Gtk module" do
       assert_equal 2, ref_count(@w)
     end
   end
-
-  describe "Gtk::RadioButton" do
-    describe ".new" do
-      it "works when called with nil" do
-        assert_nothing_raised {
-          Gtk::RadioButton.new nil
-        }
-      end
-    end
-
-    describe "#get_group" do
-      it "returns a GLib::SList object" do
-        btn = Gtk::RadioButton.new nil
-        grp = btn.get_group
-        assert_instance_of GLib::SList, grp
-      end
-    end
-
-    describe ".new" do
-      it "works when called with the result of #get_group" do
-        assert_nothing_raised {
-          btn = Gtk::RadioButton.new nil
-          grp = btn.get_group
-          Gtk::RadioButton.new grp
-        }
-      end
-    end
-
-  end
 end
