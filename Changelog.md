@@ -1,4 +1,11 @@
-### 0.6.0 / 2013-01-11
+### 0.7.1 / 2014-03-25
+
+* Fix Gtk::Builder#connect_signals_full by updating dependency on GirFFI
+* Only override Gtk::Menu#popup if needed
+* Test both Gtk+ 2 and 3
+* Provide constructors for Gtk::RadioButton if needed
+
+### 0.7.0 / 2014-01-11
 
 * Update dependency on GirFFI
 
