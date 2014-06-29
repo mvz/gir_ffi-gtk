@@ -8,5 +8,5 @@ require 'gir_ffi-gtk3'
 Gtk.init
 win = Gtk::Window.new :toplevel
 win.show
-GObject.signal_connect(win, "destroy") { Gtk.main_quit }
+win.signal_connect("destroy") { Gtk.main_quit }
 Gtk.main

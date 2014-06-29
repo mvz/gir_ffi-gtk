@@ -8,17 +8,16 @@ require 'gir_ffi-gtk3'
 Gtk.init
 
 win = Gtk::Window.new(:toplevel)
-GObject.signal_connect win, "delete-event" do
+win.signal_connect "delete-event" do
   puts "delete event occured"
   true
 end
 
-GObject.signal_connect(win, "destroy") { Gtk.main_quit }
-# FIXME: #border_width= should work
-win.set_border_width 10
+win.signal_connect("destroy") { Gtk.main_quit }
+win.border_width = 10
 
 but = Gtk::Button.new_with_label("Hello World")
-GObject.signal_connect(but, "clicked") { win.destroy }
+but.signal_connect("clicked") { win.destroy }
 
 win.add but
 

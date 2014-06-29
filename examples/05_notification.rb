@@ -22,7 +22,7 @@ nf.add_action "test", "Test", Proc.new { |obj, action, user_data|
 
 # In this case, we want the program to end once the notification is gone,
 # but not before.
-GObject.signal_connect(nf, "closed") {
+nf.signal_connect("closed") {
   puts "Notification closed."
   Gtk.main_quit
 }

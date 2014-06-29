@@ -11,5 +11,5 @@ wv = WebKit::WebView.new
 win.add(wv)
 win.show_all
 wv.open('http://www.google.com/')
-GObject.signal_connect(win, "destroy") { Gtk.main_quit }
+win.signal_connect("destroy") { Gtk.main_quit }
 Gtk.main

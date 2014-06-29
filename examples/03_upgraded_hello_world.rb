@@ -14,13 +14,12 @@ Gtk.init
 win = Gtk::Window.new(:toplevel)
 win.title= "Hello Buttons!"
 
-GObject.signal_connect win, "delete-event" do
+win.signal_connect "delete-event" do
   Gtk.main_quit
   false
 end
 
-# FIXME: #border_width= should work
-win.set_border_width 10
+win.border_width = 10
 
 box = Gtk::HBox.new(false, 0)
 win.add box

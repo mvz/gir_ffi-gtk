@@ -7,7 +7,7 @@ Gtk.init
 #Add window.
 win = Gtk::Window.new(:toplevel)
 win.resize(640, 480)
-GObject.signal_connect(win, "destroy"){ Gtk.main_quit }
+win.signal_connect("destroy") { Gtk.main_quit }
 
 
 #Add treeview.
