@@ -1,6 +1,6 @@
+Gtk.load_class :RadioButton
 module Gtk
-  load_class :RadioButton
-
+  # Add non-introspected functions to Gtk::Lib
   module Lib
     attach_function :gtk_radio_button_new, [:pointer], :pointer
     attach_function :gtk_radio_button_new_from_widget, [:pointer], :pointer
@@ -8,19 +8,16 @@ module Gtk
 
   # Overrides for GtkRadioButton
   class RadioButton
-    def self.new(group)
-      _v1 = GLib::SList.from(Gtk::RadioButton, group)
-      _v2 = Gtk::Lib.gtk_radio_button_new(_v1)
-      _v3 = self.constructor_wrap(_v2)
-      return _v3
+    def self.new group
+      v1 = GLib::SList.from(Gtk::RadioButton, group)
+      v2 = Gtk::Lib.gtk_radio_button_new(v1)
+      constructor_wrap(v2)
     end
 
-    def self.new_from_widget(radio_group_member)
-      _v1 = Gtk::RadioButton.from(radio_group_member)
-      _v2 = Gtk::Lib.gtk_radio_button_new_from_widget(_v1)
-      _v3 = self.constructor_wrap(_v2)
-      return _v3
+    def self.new_from_widget radio_group_member
+      v1 = Gtk::RadioButton.from(radio_group_member)
+      v2 = Gtk::Lib.gtk_radio_button_new_from_widget(v1)
+      constructor_wrap(v2)
     end
   end
 end
-
