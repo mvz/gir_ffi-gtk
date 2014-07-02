@@ -1,0 +1,40 @@
+AllCops:
+  Exclude:
+    - 'test/**/*'
+    - 'examples/*'
+    - 'tmp/**/*'
+    - Rakefile
+    - gir_ffi-gtk.gemspec
+
+Style/Blocks:
+  Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+Style/LineLength:
+  Max: 92
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/RedundantReturn:
+  AllowMultipleReturnValues: true
+
+# RuboCop has no setting to accept how vim aligns parameters.
+Style/AlignParameters:
+  Enabled: false
+
+# FIXME: GirFFI-Gtk uses a gir_ffi-something naming scheme.
+Style/FileName:
+  Enabled: false
+
+# TODO: Decide on the desired style (nested or compact)
+Style/ClassAndModuleChildren:
+  Enabled: false
