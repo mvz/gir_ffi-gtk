@@ -28,24 +28,4 @@ class Minitest::Test
   def ref_count object
     GObject::Object::Struct.new(object.to_ptr)[:ref_count]
   end
-
-  SAVED_MODULES = {}
-
-  def save_module name
-    if Object.const_defined? name
-      puts "Saving #{name} over existing" if SAVED_MODULES.has_key? name
-      SAVED_MODULES[name] = Object.const_get name
-      Object.send(:remove_const, name)
-    end
-  end
-
-  def restore_module name
-    if Object.const_defined? name
-      Object.send(:remove_const, name)
-    end
-    if SAVED_MODULES.has_key? name
-      Object.const_set name, SAVED_MODULES[name]
-      SAVED_MODULES.delete name
-    end
-  end
 end
