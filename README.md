@@ -24,6 +24,22 @@ Gtk3:
 
 See the `examples/` directory for more examples.
 
+## Requirements
+
+First, make sure the `ffi` gem is properly installed. See its documentation for
+the necessary requirements.
+
+GirFFI-Gtk itself depends on the GirFFI gem, and the gobject-introspection and
+gtk+ libaries.
+
+For debian-like systems, try the following for Gtk+ 3:
+
+    apt-get install libgirepository1.0-dev gobject-introspection gir1.2-gtk-3.0
+
+and for Gtk+ 2:
+
+    apt-get install libgirepository1.0-dev gobject-introspection gir1.2-gtk-2.0
+
 ## Install
 
     gem install gir_ffi-gtk
