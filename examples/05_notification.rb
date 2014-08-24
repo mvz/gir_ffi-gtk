@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 #
 # Simple notification example.
-$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 require 'gir_ffi-gtk3'
 
 GirFFI.setup :Notify
