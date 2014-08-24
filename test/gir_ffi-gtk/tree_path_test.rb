@@ -11,7 +11,6 @@ describe Gtk::TreePath do
   describe ".new_from_indices" do
     it "creates a Gtk::TreePath with the right indices" do
       tree_path = Gtk::TreePath.new_from_indices [1, 2, 3]
-      ptr = tree_path.get_indices
       tree_path.get_indices.to_a.must_equal [1, 2, 3]
     end
   end
