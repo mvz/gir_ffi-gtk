@@ -25,12 +25,12 @@ box = Gtk::HBox.new(false, 0)
 win.add box
 
 button = Gtk::Button.new_with_label("Button 1")
-GObject.signal_connect button, "clicked", "button 1", &callback
+button.signal_connect "clicked", "button 1", &callback
 box.pack_start button, true, true, 0
 button.show
 
 button = Gtk::Button.new_with_label("Button 2")
-GObject.signal_connect button, "clicked", "button 2", &callback
+button.signal_connect "clicked", "button 2", &callback
 box.pack_start button, true, true, 0
 button.show
 
@@ -38,4 +38,3 @@ box.show
 win.show
 
 Gtk.main
-
