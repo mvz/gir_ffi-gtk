@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 #
 # Based on the 'Upgraded Hello world' Gtk+ tutorial example at
 # http://library.gnome.org/devel/gtk-tutorial/2.90/x344.html
