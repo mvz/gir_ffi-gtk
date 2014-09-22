@@ -11,6 +11,7 @@ module Gtk
                                               :varargs], :pointer
   end
 
+  # Overrides for GtkMessageDialog
   class MessageDialog
     def self.new parent, flags, type, buttons, message
       ptr = Gtk::Lib.gtk_message_dialog_new(parent, flags, type, buttons,

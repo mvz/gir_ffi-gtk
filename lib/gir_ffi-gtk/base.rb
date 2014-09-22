@@ -9,6 +9,7 @@ module GirFFIGtk
       end
     end
 
+    # Implementation of class methods for AutoArgv
     module ClassMethods
       def init_with_auto_argv
         remaining = init_without_auto_argv([$PROGRAM_NAME, *ARGV]).to_a
@@ -29,6 +30,7 @@ module GirFFIGtk
       end
     end
 
+    # Implementation of class methods for ThreadEnabler
     module ClassMethods
       def main_with_thread_enabler
         case RUBY_ENGINE
