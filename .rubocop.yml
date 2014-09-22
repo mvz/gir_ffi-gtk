@@ -6,26 +6,41 @@ AllCops:
     - Rakefile
     - gir_ffi-gtk.gemspec
 
+# Allow if (foo = get_foo) style
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
+# Allow multi-line blocks of all sorts
 Style/Blocks:
   Enabled: false
 
+# Dot at end of line makes it clearer that the line is not done
 Style/DotPosition:
   EnforcedStyle: trailing
 
+# Require lines to fit in pull requests.
 Style/LineLength:
   Max: 92
 
+# Prefer no parentheses in method definitions
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
 
+# Always use raise to raise exceptions
 Style/SignalException:
   EnforcedStyle: only_raise
 
+# Allow non-interpolated strings with double quotes
 Style/StringLiterals:
   Enabled: false
 
+# Allow explicit return with multiple return values
 Style/RedundantReturn:
   AllowMultipleReturnValues: true
+
+# Gtk+ has a lot of accessor method starting with get_ or set_
+Style/AccessorMethodName:
+  Enabled: false
 
 # RuboCop has no setting to accept how vim aligns parameters.
 Style/AlignParameters:
