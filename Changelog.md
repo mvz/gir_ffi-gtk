@@ -1,3 +1,16 @@
+## Change Log
+All notable changes to this project will be documented in this file. See the
+Git log for all changes.
+
+### 0.7.2 / 2014-09-22
+
+* Require at least Ruby 1.9.3
+* Add overrides for Gtk::TreePath
+* Add overrides for Gtk::MessageDialog.new
+* Make other Ruby threads run during Gtk.main loop
+* Update dependencies
+* Update examples
+
 ### 0.7.1 / 2014-03-25
 
 * Fix Gtk::Builder#connect_signals_full by updating dependency on GirFFI
@@ -25,4 +38,4 @@
 
 ### 0.4.0 / 2012-08-24
 
-* Inital release
+* Initial release
