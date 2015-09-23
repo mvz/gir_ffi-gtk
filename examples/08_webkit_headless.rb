@@ -5,17 +5,17 @@ GirFFI.setup :WebKit, '3.0'
 Gtk.init
 
 win = Gtk::OffscreenWindow.new
-wv = WebKit::WebView.new
-win.add(wv)
+web_view = WebKit::WebView.new
+win.add(web_view)
 
-wv.signal_connect "load-finished" do
-  pb = win.get_pixbuf
-  pb.savev("google.png", "png", nil, nil)
-  puts wv.get_title
+web_view.signal_connect "load-finished" do
+  pixbuf = win.get_pixbuf
+  pixbuf.savev("google.png", "png", nil, nil)
+  puts web_view.get_title
   Gtk.main_quit
 end
 
-wv.load_uri('http://www.google.com/')
+web_view.load_uri('http://www.google.com/')
 win.show_all
 
 Gtk.main
