@@ -21,15 +21,15 @@ module Gtk
     end
 
     def initialize(group)
-      v1 = GLib::SList.from(Gtk::RadioButton, group)
-      v2 = Gtk::Lib.gtk_radio_button_new(v1)
-      store_pointer(v2)
+      list = GLib::SList.from(Gtk::RadioButton, group)
+      ptr = Gtk::Lib.gtk_radio_button_new(list)
+      store_pointer(ptr)
     end
 
     def initialize_from_widget(radio_group_member)
-      v1 = Gtk::RadioButton.from(radio_group_member)
-      v2 = Gtk::Lib.gtk_radio_button_new_from_widget(v1)
-      store_pointer(v2)
+      widget = Gtk::RadioButton.from(radio_group_member)
+      ptr = Gtk::Lib.gtk_radio_button_new_from_widget(widget)
+      store_pointer(ptr)
     end
   end
 end
