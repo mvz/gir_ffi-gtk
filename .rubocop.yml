@@ -10,33 +10,9 @@ AllCops:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
-# Allow multi-line blocks of all sorts
-Style/Blocks:
-  Enabled: false
-
-# Dot at end of line makes it clearer that the line is not done
-Style/DotPosition:
-  EnforcedStyle: trailing
-
 # Require lines to fit in pull requests.
-Style/LineLength:
+Metrics/LineLength:
   Max: 92
-
-# Prefer no parentheses in method definitions
-Style/MethodDefParentheses:
-  EnforcedStyle: require_no_parentheses
-
-# Always use raise to raise exceptions
-Style/SignalException:
-  EnforcedStyle: only_raise
-
-# Allow non-interpolated strings with double quotes
-Style/StringLiterals:
-  Enabled: false
-
-# Allow explicit return with multiple return values
-Style/RedundantReturn:
-  AllowMultipleReturnValues: true
 
 # Gtk+ has a lot of accessor method starting with get_ or set_
 Style/AccessorMethodName:
@@ -46,10 +22,38 @@ Style/AccessorMethodName:
 Style/AlignParameters:
   Enabled: false
 
-# FIXME: GirFFI-Gtk uses a gir_ffi-something naming scheme.
-Style/FileName:
-  Enabled: false
+# Allow and/or for control flow only
+Style/AndOr:
+  EnforcedStyle: conditionals
 
 # TODO: Decide on the desired style (nested or compact)
 Style/ClassAndModuleChildren:
   Enabled: false
+
+# Dot at end of line makes it clearer that the line is not done
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+# FIXME: GirFFI-Gtk uses a gir_ffi-something naming scheme.
+Style/FileName:
+  Enabled: false
+
+# Require at least two dependent lines before suggesting a guard clause
+Style/GuardClause:
+  MinBodyLength: 2
+
+# Don't use if or unless as modifier if the line gets too long
+Style/IfUnlessModifier:
+  MaxLineLength: 60
+
+# Allow explicit return with multiple return values
+Style/RedundantReturn:
+  AllowMultipleReturnValues: true
+
+# Always use raise to raise exceptions
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+# Accessors are only trivial if they match the ivar name.
+Style/TrivialAccessors:
+  ExactNameMatch: true
