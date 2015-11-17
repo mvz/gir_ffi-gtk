@@ -1,7 +1,7 @@
 module GirFFIGtk
   # Override init to automatically use ARGV as its argument.
   module AutoArgv
-    def self.included base
+    def self.included(base)
       base.extend ClassMethods
       class << base
         alias_method :init_without_auto_argv, :init
@@ -22,7 +22,7 @@ module GirFFIGtk
   # Override main to start an idle thread to allow Ruby threads to run during
   # the main loop.
   module ThreadEnabler
-    def self.included base
+    def self.included(base)
       base.extend ClassMethods
       class << base
         alias_method :main_without_thread_enabler, :main
@@ -47,8 +47,8 @@ end
 
 # Overrides for Gtk module functions
 module Gtk
-  setup_method "init"
-  setup_method "main"
+  setup_method 'init'
+  setup_method 'main'
 
   include GirFFIGtk::AutoArgv
   include GirFFIGtk::ThreadEnabler
