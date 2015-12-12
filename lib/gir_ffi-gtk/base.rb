@@ -20,26 +20,37 @@ module GirFFIGtk
   end
 
   # Override main to start an idle thread to allow Ruby threads to run during
-  # the main loop.
-  module ThreadEnabler
-    def self.included(base)
-      base.extend ClassMethods
-      class << base
-        alias_method :main_without_thread_enabler, :main
-        alias_method :main, :main_with_thread_enabler
+  # the main loop, and to handle exceptions
+  module MainLoopOverride
+    class DummyLoop
+      def quit
+        Gtk.main_quit
       end
     end
 
-    # Implementation of class methods for ThreadEnabler
+    def self.included(base)
+      base.extend ClassMethods
+      class << base
+        alias_method :main_without_override, :main
+        alias_method :main, :main_with_override
+      end
+    end
+
+    # Implementation of class methods for MainLoopOverride
     module ClassMethods
-      def main_with_thread_enabler
+      def main_with_override
         case RUBY_ENGINE
         when 'jruby'
         when 'rbx'
         else # 'ruby' most likely
           GLib::MainLoop::ThreadEnabler.instance.setup_idle_handler
         end
-        main_without_thread_enabler
+        GLib::MainLoop::RUNNING_LOOPS << DummyLoop.new
+        result = main_without_override
+        ex = GLib::MainLoop::EXCEPTIONS.shift
+        GLib::MainLoop::RUNNING_LOOPS.pop
+        raise ex if ex
+        result
       end
     end
   end
@@ -51,5 +62,5 @@ module Gtk
   setup_method 'main'
 
   include GirFFIGtk::AutoArgv
-  include GirFFIGtk::ThreadEnabler
+  include GirFFIGtk::MainLoopOverride
 end

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## Unreleased
+
+* Propagate exceptions from callbacks during event loops
+
 ## 0.8.1 / 2015-12-02
 
 * Add override for Gtk::RadioAction#set_group
