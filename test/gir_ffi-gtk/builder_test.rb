@@ -18,4 +18,30 @@ describe Gtk::Builder do
       pass
     end
   end
+
+  describe "#connect_signals" do
+    before do
+      builder.add_from_string spec
+    end
+
+    it 'passes the handler name to the block' do
+      name = nil
+      builder.connect_signals do |handler_name|
+        name = handler_name
+        nil
+      end
+
+      name.must_equal 'on_button_clicked'
+    end
+
+    it 'connects the signal to the proc returned by the block' do
+      name = nil
+      builder.connect_signals do |handler_name|
+        proc { name = handler_name }
+      end
+      button = builder.get_object('foo')
+      GObject.signal_emit button, 'clicked'
+      name.must_equal 'on_button_clicked'
+    end
+  end
 end
