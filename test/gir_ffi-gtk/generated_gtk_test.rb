@@ -17,12 +17,12 @@ describe "In the generated Gtk module" do
     end
 
     it "loads the interface spec" do
-      assert_nothing_raised { @builder.add_from_string @spec, @spec.length }
+      assert_nothing_raised { @builder.add_from_string @spec }
     end
 
     describe "its #get_object method" do
       it "returns objects of the proper class" do
-        @builder.add_from_string @spec, @spec.length
+        @builder.add_from_string @spec
         o = @builder.get_object "foo"
         assert_instance_of Gtk::Button, o
       end
@@ -30,7 +30,7 @@ describe "In the generated Gtk module" do
 
     describe "its #connect_signals_full method" do
       before do
-        @builder.add_from_string @spec, @spec.length
+        @builder.add_from_string @spec
       end
       it "passes arguments correctly" do
         aa = nil
