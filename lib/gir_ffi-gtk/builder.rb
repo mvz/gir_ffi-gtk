@@ -14,11 +14,19 @@ module Gtk
     setup_instance_method :connect_signals_full
     remove_method :connect_signals
 
+    AFTER_FLAG = GObject::ConnectFlags[:after]
+
     def connect_signals
       connect_signals_full(
-        proc do |_builder, object, signal_name, handler_name, _connect_object, _flags, _user_data|
+        proc do |_builder, object, signal_name, handler_name, _connect_object, flags, _user_data|
           handler = yield handler_name
-          object.signal_connect signal_name, &handler if handler
+          return unless handler
+
+          if flags & AFTER_FLAG == AFTER_FLAG
+            object.signal_connect_after signal_name, &handler
+          else
+            object.signal_connect signal_name, &handler
+          end
         end,
         nil)
     end

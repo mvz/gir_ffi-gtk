@@ -43,5 +43,28 @@ describe Gtk::Builder do
       GObject.signal_emit button, 'clicked'
       name.must_equal 'on_button_clicked'
     end
+
+    describe 'with a signal with after flag' do
+      let(:spec) do
+        <<-EOS
+          <interface>
+          <object class="GtkButton" id="foo">
+          <signal handler="handler_after" name="clicked" after="true"/>
+          <signal handler="handler_before" name="clicked"/>
+          </object>
+          </interface>
+        EOS
+      end
+
+      it 'connects the handlers in the right order' do
+        name = nil
+        builder.connect_signals do |handler_name|
+          proc { name = handler_name }
+        end
+        button = builder.get_object('foo')
+        GObject.signal_emit button, 'clicked'
+        name.must_equal 'handler_after'
+      end
+    end
   end
 end
