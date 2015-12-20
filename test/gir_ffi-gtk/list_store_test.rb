@@ -26,4 +26,13 @@ describe Gtk::ListStore do
       store.get_value(row, 1).get_value.must_equal 3
     end
   end
+
+  describe '#set_value' do
+    it 'allows setting a value to nil' do
+      store = Gtk::ListStore.new([GObject::TYPE_STRING, GObject::TYPE_INT])
+      row = store.insert_with_values(0, [0, 1], ['foo', 42])
+      store.set_value(row, 0, nil)
+      store.get_value(row, 0).get_value.must_equal nil
+    end
+  end
 end
