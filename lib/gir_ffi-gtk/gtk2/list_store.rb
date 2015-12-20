@@ -7,4 +7,3 @@ module Gtk
     alias_method :initialize, :initializev
   end
 end
-
