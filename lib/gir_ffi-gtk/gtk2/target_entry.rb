@@ -5,7 +5,7 @@ module Gtk
     def initialize(target, flags, info)
       super()
       self.target = target
-      self.flags = flags
+      self.flags = Gtk::TargetFlags.to_native flags, nil
       self.info = info
     end
   end
