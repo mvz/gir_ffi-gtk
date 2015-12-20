@@ -13,11 +13,7 @@ module Gtk
 
   # Overrides for GtkMessageDialog
   class MessageDialog
-    def self.new(*args)
-      obj = allocate
-      obj.send :initialize, *args
-      obj
-    end
+    alias_method :old_initialize, :initialize
 
     def initialize(parent, flags, type, buttons, message)
       ptr = Gtk::Lib.gtk_message_dialog_new(parent, flags, type, buttons,
@@ -25,5 +21,7 @@ module Gtk
                                             :string, message)
       store_pointer(ptr)
     end
+
+    remove_method :old_initialize
   end
 end
