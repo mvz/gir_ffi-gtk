@@ -8,6 +8,7 @@ require 'gir_ffi-gtk/menu'
 require 'gir_ffi-gtk/message_dialog'
 require 'gir_ffi-gtk/tree_path'
 
+require 'gir_ffi-gtk/gtk2/list_store'
 require 'gir_ffi-gtk/gtk2/radio_action'
 require 'gir_ffi-gtk/gtk2/radio_button'
 require 'gir_ffi-gtk/gtk2/target_entry'
