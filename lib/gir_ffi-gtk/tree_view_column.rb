@@ -20,9 +20,7 @@ module Gtk
       initialize
       set_title title
       pack_start(renderer, false)
-      attributes.each do |attribute, column|
-        add_attribute renderer, attribute.to_s, column
-      end
+      set_attributes(renderer, attributes)
     end
   end
 end
