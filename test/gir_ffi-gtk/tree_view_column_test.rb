@@ -28,4 +28,22 @@ describe Gtk::TreeViewColumn do
       col.must_be_instance_of Gtk::TreeViewColumn
     end
   end
+
+  describe '#set_attributes' do
+    let(:renderer) { Gtk::CellRendererText.new }
+    let(:column) { Gtk::TreeViewColumn.new }
+    let(:list_store) { Gtk::ListStore.new([GObject::TYPE_INT, GObject::TYPE_STRING]) }
+
+    before do
+      column.pack_start(renderer, false)
+      column.set_attributes(renderer, text: 1)
+    end
+
+    it "adds the attribute mapping for the renderer" do
+      row = list_store.append
+      list_store.set_value(row, 1, 'foo-value')
+      column.cell_set_cell_data(list_store, row, false, false)
+      renderer.text.must_equal 'foo-value'
+    end
+  end
 end

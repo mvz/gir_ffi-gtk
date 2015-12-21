@@ -8,6 +8,12 @@ module Gtk
       obj
     end
 
+    def set_attributes(renderer, attributes)
+      attributes.each do |attribute, column|
+        add_attribute renderer, attribute.to_s, column
+      end
+    end
+
     private
 
     def initialize_with_attributes(title, renderer, attributes = {})
