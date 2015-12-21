@@ -6,6 +6,8 @@ module Gtk
 
     alias_method :insert_with_values, :insert_with_valuesv
 
+    setup_instance_method :set_value
+
     def set_value_with_value_conversion(iter, column, value)
       if value.nil?
         value = GObject::Value.for_gtype get_column_type(column)
