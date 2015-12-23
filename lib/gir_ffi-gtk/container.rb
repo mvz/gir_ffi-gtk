@@ -4,6 +4,9 @@ module Gtk
   class Container
     def add_with_properties(widget, properties)
       add widget
+      properties.each do |property_name, value|
+        child_set_property widget, property_name.to_s, value
+      end
     end
 
     setup_instance_method :child_get_property

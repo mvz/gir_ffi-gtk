@@ -6,11 +6,15 @@ describe Gtk::Container do
 
   describe '#add_with_properties' do
     before do
-      container.add_with_properties widget, expand: true, pack_type: :end
+      container.add_with_properties widget, :'left-attach' => 1
     end
 
     it 'adds the widget to the container' do
       container.get_children.to_a.must_equal [widget]
+    end
+
+    it 'sets the child properties for the widget' do
+      container.child_get_property(widget, 'left-attach').must_equal 1
     end
   end
 
