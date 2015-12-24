@@ -15,7 +15,9 @@ require 'rr'
 
 Thread.abort_on_exception = true
 
-unless Object.const_defined? :Gtk
+if ENV['GTK_VERSION'] == '2'
+  require 'gir_ffi-gtk2'
+else
   require 'gir_ffi-gtk3'
 end
 
