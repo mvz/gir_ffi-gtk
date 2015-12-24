@@ -26,10 +26,14 @@ describe "An exception in a callback" do
         }
         GLib.timeout_add GLib::PRIORITY_DEFAULT, 1, emit_func, nil, nil
         # Guard against runaway loop
-        GLib.timeout_add GLib::PRIORITY_DEFAULT, 1000, proc { Gtk.main_quit }, nil, nil
+        @guard = GLib.timeout_add GLib::PRIORITY_DEFAULT, 1000, proc { Gtk.main_quit }, nil, nil
         proc do
           Gtk.main
         end.must_raise CallbackTestException
+      end
+
+      after do
+        GLib.source_remove @guard
       end
     end
   end
@@ -43,10 +47,14 @@ describe "An exception in a callback" do
 
         GLib.timeout_add GLib::PRIORITY_DEFAULT, 1, raise_func, nil, nil
         # Guard against runaway loop
-        GLib.timeout_add GLib::PRIORITY_DEFAULT, 1000, proc { Gtk.main_quit }, nil, nil
+        @guard = GLib.timeout_add GLib::PRIORITY_DEFAULT, 1000, proc { Gtk.main_quit }, nil, nil
         proc do
           Gtk.main
         end.must_raise CallbackTestException
+      end
+
+      after do
+        GLib.source_remove @guard
       end
     end
   end
