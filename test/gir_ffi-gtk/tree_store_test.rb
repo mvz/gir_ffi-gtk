@@ -12,8 +12,8 @@ describe Gtk::TreeStore do
     it 'inserts a row with the given values' do
       store = Gtk::TreeStore.new([GObject::TYPE_STRING, GObject::TYPE_INT])
       row = store.insert_with_values(nil, 0, [0, 1], ['foo', 42])
-      store.get_value(row, 0).get_value.must_equal 'foo'
-      store.get_value(row, 1).get_value.must_equal 42
+      store.get_value(row, 0).must_equal 'foo'
+      store.get_value(row, 1).must_equal 42
     end
   end
 
@@ -22,8 +22,8 @@ describe Gtk::TreeStore do
       store = Gtk::TreeStore.new([GObject::TYPE_STRING, GObject::TYPE_INT])
       row = store.insert_with_values(nil, 0, [0, 1], ['foo', 42])
       store.set(row, [1, 0], [3, 'bar'])
-      store.get_value(row, 0).get_value.must_equal 'bar'
-      store.get_value(row, 1).get_value.must_equal 3
+      store.get_value(row, 0).must_equal 'bar'
+      store.get_value(row, 1).must_equal 3
     end
   end
 
@@ -32,7 +32,7 @@ describe Gtk::TreeStore do
       store = Gtk::TreeStore.new([GObject::TYPE_STRING, GObject::TYPE_INT])
       row = store.insert_with_values(nil, 0, [0, 1], ['foo', 42])
       store.set_value(row, 0, nil)
-      store.get_value(row, 0).get_value.must_equal nil
+      store.get_value(row, 0).must_equal nil
     end
   end
 end

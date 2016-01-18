@@ -34,7 +34,7 @@ describe "In the generated Gtk module" do
       end
       it "passes arguments correctly" do
         aa = nil
-        @builder.connect_signals_full Proc.new {|*args| aa = args}, nil
+        @builder.connect_signals_full(nil) {|*args| aa = args}
         b, o, sn, hn, co, f, ud = aa
         assert_instance_of Gtk::Builder, b
         assert_equal b.to_ptr, @builder.to_ptr

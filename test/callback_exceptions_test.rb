@@ -20,13 +20,12 @@ describe "An exception in a callback" do
 
     describe "when the signal is emitted during an event loop" do
       it "causes loop run to be terminated with an exception" do
-        emit_func = proc {
+        GLib.timeout_add GLib::PRIORITY_DEFAULT, 1, nil, nil do
           GObject.signal_emit object, "destroy"
           false
-        }
-        GLib.timeout_add GLib::PRIORITY_DEFAULT, 1, emit_func, nil, nil
+        end
         # Guard against runaway loop
-        @guard = GLib.timeout_add GLib::PRIORITY_DEFAULT, 1000, proc { Gtk.main_quit }, nil, nil
+        @guard = GLib.timeout_add(GLib::PRIORITY_DEFAULT, 1000, nil, nil) { Gtk.main_quit }
         proc do
           Gtk.main
         end.must_raise CallbackTestException
@@ -41,13 +40,11 @@ describe "An exception in a callback" do
   describe "for other callbacks" do
     describe "when the callback occurs during an event loop" do
       it "causes loop run to be terminated with an exception" do
-        raise_func = FFI::Function.new(:bool, [:pointer]) {
+        GLib.timeout_add GLib::PRIORITY_DEFAULT, 1, nil, nil do
           raise CallbackTestException, "Boom"
-        }
-
-        GLib.timeout_add GLib::PRIORITY_DEFAULT, 1, raise_func, nil, nil
+        end
         # Guard against runaway loop
-        @guard = GLib.timeout_add GLib::PRIORITY_DEFAULT, 1000, proc { Gtk.main_quit }, nil, nil
+        @guard = GLib.timeout_add(GLib::PRIORITY_DEFAULT, 1000, nil, nil) { Gtk.main_quit }
         proc do
           Gtk.main
         end.must_raise CallbackTestException

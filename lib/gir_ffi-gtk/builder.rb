@@ -17,18 +17,16 @@ module Gtk
     AFTER_FLAG = GObject::ConnectFlags[:after]
 
     def connect_signals
-      connect_signals_full(
-        proc do |_builder, object, signal_name, handler_name, _connect_object, flags, _user_data|
-          handler = yield handler_name
-          return unless handler
+      connect_signals_full nil do |_builder, object, signal_name, handler_name, _connect_object, flags, _user_data|
+        handler = yield handler_name
+        return unless handler
 
-          if flags & AFTER_FLAG == AFTER_FLAG
-            object.signal_connect_after signal_name, &handler
-          else
-            object.signal_connect signal_name, &handler
-          end
-        end,
-        nil)
+        if flags & AFTER_FLAG == AFTER_FLAG
+          object.signal_connect_after signal_name, &handler
+        else
+          object.signal_connect signal_name, &handler
+        end
+      end
     end
   end
 end
