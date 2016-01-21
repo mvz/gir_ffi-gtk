@@ -28,7 +28,7 @@ describe Gtk do
   describe "::main" do
     it "allows other threads to run" do
       a = []
-      GLib.timeout_add(GLib::PRIORITY_DEFAULT, 150, nil, nil) { Gtk.main_quit }
+      GLib.timeout_add(GLib::PRIORITY_DEFAULT, 150) { Gtk.main_quit }
 
       slow_thread = Thread.new do
         sleep 0.005

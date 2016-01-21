@@ -17,7 +17,7 @@ module Gtk
     AFTER_FLAG = GObject::ConnectFlags[:after]
 
     def connect_signals
-      connect_signals_full nil do |_builder, object, signal_name, handler_name, _connect_object, flags, _user_data|
+      connect_signals_full do |_builder, object, signal_name, handler_name, _connect_object, flags, _user_data|
         handler = yield handler_name
         return unless handler
 

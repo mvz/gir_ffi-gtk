@@ -34,7 +34,7 @@ describe "In the generated Gtk module" do
       end
       it "passes arguments correctly" do
         aa = nil
-        @builder.connect_signals_full(nil) {|*args| aa = args}
+        @builder.connect_signals_full {|*args| aa = args}
         b, o, sn, hn, co, f, ud = aa
         assert_instance_of Gtk::Builder, b
         assert_equal b.to_ptr, @builder.to_ptr
@@ -43,7 +43,7 @@ describe "In the generated Gtk module" do
         assert_equal "on_button_clicked", hn
         assert_equal nil, co
         assert_equal 0, f
-        assert_equal nil, ud
+        ud.wont_be_nil
       end
     end
   end
