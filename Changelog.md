@@ -3,9 +3,20 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
-## Unreleased
+## 0.9.0 / 2016-01-21
 
 * Propagate exceptions from callbacks during event loops
+* Add new overrides:
+  * for Gtk::Container
+  * for Gtk::TreeViewColumn
+  * for Gtk::TreeStore
+  * for Gtk::ListStore
+  * for Gtk::TargetEntry.new
+  * for GtkBuilder#connect_signals
+* Depend on GirFFI 0.9.0
+* Use GirFFI's new way of handling callback parameters and user data and
+  destroy notifier handling
+
 
 ## 0.8.1 / 2015-12-02
 
