@@ -18,7 +18,11 @@ namespace :test do
   task :set_gtk_version_2 do
     ENV['GTK_VERSION'] = '2'
   end
+
+  task :sleep do
+    sleep 1
+  end
 end
 
 desc 'Run unit tests'
-task test: ['test:gtk3', 'test:gtk2']
+task test: ['test:gtk3', 'test:sleep', 'test:gtk2']
