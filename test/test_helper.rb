@@ -31,3 +31,5 @@ class Minitest::Test
     GObject::Object::Struct.new(object.to_ptr)[:ref_count]
   end
 end
+
+Gtk.init

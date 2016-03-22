@@ -1,7 +1,5 @@
 require 'test_helper'
 
-Gtk.init
-
 # Tests generated methods and functions in the Gtk namespace.
 describe "In the generated Gtk module" do
   describe "a Gtk::Builder instance" do
