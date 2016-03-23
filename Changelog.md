@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.10.0 / 2016-03-23
+
+* Depend on GirFFI 0.10.0
+
 ## 0.9.0 / 2016-01-21
 
 * Propagate exceptions from callbacks during event loops
