@@ -1,3 +1,5 @@
+sudo: required
+dist: trusty
 language: ruby
 rvm:
   - 2.0.0
@@ -8,15 +10,18 @@ rvm:
   - ruby-head-clang
   - jruby-9.0
   - jruby-head
-  - rbx-3.7
+  - rbx-3.19
 matrix:
   allow_failures:
+    - rvm: jruby-9.0
     - rvm: jruby-head
     - rvm: ruby-head
     - rvm: ruby-head-clang
+    - rvm: rbx-3.19
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install libgirepository1.0-dev gobject-introspection gir1.2-gtk-3.0
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libgirepository1.0-dev gobject-introspection
+  - sudo apt-get install -y gir1.2-gtk-3.0 gir1.2-gtk-2.0
   - gem update bundler
 before_script:
   - "export DISPLAY=:99.0"
