@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.11.0 / 2016-10-16
+
+* Depend on GirFFI 0.11.0
+
 ## 0.10.0 / 2016-03-23
 
 * Depend on GirFFI 0.10.0
@@ -20,7 +24,6 @@ Git log for all changes.
 * Depend on GirFFI 0.9.0
 * Use GirFFI's new way of handling callback parameters and user data and
   destroy notifier handling
-
 
 ## 0.8.1 / 2015-12-02
 
