@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{lib,test,tasks,examples}/**/*', "*.md", "Rakefile", "COPYING.LIB"] & `git ls-files -z`.split("\0")
   s.test_files = `git ls-files -z -- test`.split("\0")
 
-  s.add_runtime_dependency('gir_ffi', ["~> 0.10.0"])
+  s.add_runtime_dependency('gir_ffi', ["~> 0.11.0"])
   s.add_development_dependency('minitest', ["~> 5.0"])
   s.add_development_dependency('rr', ["~> 1.1"])
   s.add_development_dependency('rake', ["~> 11.1"])
