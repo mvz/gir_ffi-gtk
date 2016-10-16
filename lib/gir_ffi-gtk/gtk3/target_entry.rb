@@ -9,7 +9,7 @@ module Gtk
       initialize_without_flags_conversion target, native_flags, info
     end
 
-    alias_method :initialize_without_flags_conversion, :initialize
-    alias_method :initialize, :initialize_with_flags_conversion
+    alias initialize_without_flags_conversion initialize
+    alias initialize initialize_with_flags_conversion
   end
 end

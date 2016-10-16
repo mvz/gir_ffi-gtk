@@ -14,7 +14,7 @@ module Gtk
       obj
     end
 
-    alias_method :old_initialize, :initialize
+    alias old_initialize initialize
 
     def initialize(group)
       list = GLib::SList.from(Gtk::RadioButton, group)

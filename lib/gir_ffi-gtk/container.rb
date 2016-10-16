@@ -24,7 +24,7 @@ module Gtk
       gvalue.get_value
     end
 
-    alias_method :child_get_property_without_override, :child_get_property
-    alias_method :child_get_property, :child_get_property_with_override
+    alias child_get_property_without_override child_get_property
+    alias child_get_property child_get_property_with_override
   end
 end

@@ -13,7 +13,7 @@ module Gtk
 
   # Overrides for GtkMessageDialog
   class MessageDialog
-    alias_method :old_initialize, :initialize
+    alias old_initialize initialize
 
     def initialize(parent, flags, type, buttons, message)
       ptr = Gtk::Lib.gtk_message_dialog_new(parent, flags, type, buttons,

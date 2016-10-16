@@ -8,8 +8,8 @@ module Gtk
       add_from_string_without_auto_length buffer, buffer.length
     end
 
-    alias_method :add_from_string_without_auto_length, :add_from_string
-    alias_method :add_from_string, :add_from_string_with_auto_length
+    alias add_from_string_without_auto_length add_from_string
+    alias add_from_string add_from_string_with_auto_length
 
     setup_instance_method :connect_signals_full
     remove_method :connect_signals
