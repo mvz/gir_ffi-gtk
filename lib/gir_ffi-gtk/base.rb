@@ -22,6 +22,8 @@ module GirFFIGtk
   # Override main to start an idle thread to allow Ruby threads to run during
   # the main loop, and to handle exceptions
   module MainLoopOverride
+    # Class to represent a loop-like interface to the main loop exception
+    # handing interface in GLib::MainLoop.
     class DummyLoop
       def quit
         Gtk.main_quit
@@ -39,10 +41,7 @@ module GirFFIGtk
     # Implementation of class methods for MainLoopOverride
     module ClassMethods
       def main_with_override
-        case RUBY_ENGINE
-        when 'jruby'
-        when 'rbx'
-        else # 'ruby' most likely
+        if RUBY_ENGINE == 'ruby'
           GLib::MainLoop::ThreadEnabler.instance.setup_idle_handler
         end
         GLib::MainLoop::RUNNING_LOOPS << DummyLoop.new

@@ -17,7 +17,8 @@ module Gtk
     AFTER_FLAG = GObject::ConnectFlags[:after]
 
     def connect_signals
-      connect_signals_full do |_builder, object, signal_name, handler_name, _connect_object, flags, _user_data|
+      # rubocop:disable Metrics/ParameterLists
+      connect_signals_full do |_, object, signal_name, handler_name, _, flags, _|
         handler = yield handler_name
         return unless handler
 

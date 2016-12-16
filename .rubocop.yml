@@ -5,6 +5,7 @@ AllCops:
     - 'tmp/**/*'
     - Rakefile
     - gir_ffi-gtk.gemspec
+  DisplayCopNames: true
 
 # Allow if (foo = get_foo) style
 Lint/AssignmentInCondition:
