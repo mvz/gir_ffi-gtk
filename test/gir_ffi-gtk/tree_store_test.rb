@@ -32,7 +32,7 @@ describe Gtk::TreeStore do
       store = Gtk::TreeStore.new([GObject::TYPE_STRING, GObject::TYPE_INT])
       row = store.insert_with_values(nil, 0, [0, 1], ['foo', 42])
       store.set_value(row, 0, nil)
-      store.get_value(row, 0).must_equal nil
+      store.get_value(row, 0).must_be_nil
     end
   end
 end

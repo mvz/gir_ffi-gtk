@@ -39,7 +39,7 @@ describe "In the generated Gtk module" do
         assert_instance_of Gtk::Button, o
         assert_equal "clicked", sn
         assert_equal "on_button_clicked", hn
-        assert_equal nil, co
+        co.must_be_nil
         assert_equal 0, f
         ud.wont_be_nil
       end
