@@ -2,6 +2,8 @@ Gtk.load_class :TreeViewColumn
 module Gtk
   # Overrides for Gtk::TreeViewColumn
   class TreeViewColumn
+    setup_method :new
+
     def self.new_with_attributes(*args)
       obj = allocate
       obj.send :initialize_with_attributes, *args
