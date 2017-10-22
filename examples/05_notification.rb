@@ -15,9 +15,9 @@ nf.timeout = 3000
 nf.urgency = :critical
 
 # Show a button 'Test' in the notification, with a callback function.
-nf.add_action "test", "Test", Proc.new { |obj, action, user_data|
+nf.add_action("test", "Test") { |obj, action, user_data|
   puts "Action #{action} clicked."
-}, nil, nil
+}
 
 # In this case, we want the program to end once the notification is gone,
 # but not before.
