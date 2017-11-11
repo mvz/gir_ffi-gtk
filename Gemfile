@@ -4,6 +4,5 @@ source 'https://rubygems.org'
 gemspec
 
 unless ENV['CI']
-  gem 'pry', require: false
   gem 'simplecov', require: false if RUBY_ENGINE == 'ruby'
 end
