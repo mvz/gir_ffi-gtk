@@ -11,6 +11,7 @@ module Gtk
                          nil,
                          button, activate_time)
       end
+      # rubocop:enable Metrics/ParameterLists
     end
   end
 end

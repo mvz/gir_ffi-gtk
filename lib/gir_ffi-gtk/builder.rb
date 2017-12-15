@@ -28,6 +28,7 @@ module Gtk
           object.signal_connect signal_name, &handler
         end
       end
+      # rubocop:enable Metrics/ParameterLists
     end
   end
 end
