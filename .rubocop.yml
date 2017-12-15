@@ -7,6 +7,14 @@ AllCops:
     - gir_ffi-gtk.gemspec
   DisplayCopNames: true
 
+# RuboCop has no setting to accept how vim aligns parameters.
+Layout/AlignParameters:
+  Enabled: false
+
+# Dot at end of line makes it clearer that the line is not done
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
 # Allow if (foo = get_foo) style
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
@@ -16,11 +24,11 @@ Metrics/LineLength:
   Max: 92
 
 # Gtk+ has a lot of accessor method starting with get_ or set_
-Style/AccessorMethodName:
+Naming/AccessorMethodName:
   Enabled: false
 
-# RuboCop has no setting to accept how vim aligns parameters.
-Style/AlignParameters:
+# FIXME: GirFFI-Gtk uses a gir_ffi-something naming scheme.
+Naming/FileName:
   Enabled: false
 
 # Allow and/or for control flow only
@@ -31,21 +39,9 @@ Style/AndOr:
 Style/ClassAndModuleChildren:
   Enabled: false
 
-# Dot at end of line makes it clearer that the line is not done
-Style/DotPosition:
-  EnforcedStyle: trailing
-
-# FIXME: GirFFI-Gtk uses a gir_ffi-something naming scheme.
-Style/FileName:
-  Enabled: false
-
 # Require at least two dependent lines before suggesting a guard clause
 Style/GuardClause:
   MinBodyLength: 2
-
-# Don't use if or unless as modifier if the line gets too long
-Style/IfUnlessModifier:
-  MaxLineLength: 60
 
 # Allow explicit return with multiple return values
 Style/RedundantReturn:
