@@ -46,7 +46,7 @@ and for Gtk+ 2:
 
 ## License
 
-Copyright &copy; 2012&ndash;2016 [Matijs van Zuijlen](http://www.matijs.net)
+Copyright &copy; 2012&ndash;2017 [Matijs van Zuijlen](http://www.matijs.net)
 
 GirFFI-Gtk is free software, distributed under the terms of the GNU Lesser
 General Public License, version 2.1 or later. See the file COPYING.LIB for

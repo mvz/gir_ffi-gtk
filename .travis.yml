@@ -2,23 +2,22 @@ sudo: required
 dist: trusty
 language: ruby
 rvm:
-  - 2.1.9
-  - 2.2.6
-  - 2.3.3
+  - 2.2.9
+  - 2.3.5
+  - 2.4.3
+  - 2.5.0
   - ruby-head
   - ruby-head-clang
-  - jruby-9.0
+  - jruby-9.1
   - jruby-head
-  - rbx-3.19
-  - rbx-3.69
+  - rbx-3
 matrix:
   allow_failures:
-    - rvm: jruby-9.0
+    - rvm: jruby-9.1
     - rvm: jruby-head
     - rvm: ruby-head
     - rvm: ruby-head-clang
-    - rvm: rbx-3.19
-    - rvm: rbx-3.69
+    - rvm: rbx-3
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libgirepository1.0-dev gobject-introspection
