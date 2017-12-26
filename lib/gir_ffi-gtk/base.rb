@@ -41,9 +41,7 @@ module GirFFIGtk
     # Implementation of class methods for MainLoopOverride
     module ClassMethods
       def main_with_override
-        if RUBY_ENGINE == 'ruby'
-          GLib::MainLoop::ThreadEnabler.instance.setup_idle_handler
-        end
+        GLib::MainLoop::ThreadEnabler.instance.setup_idle_handler if RUBY_ENGINE == 'ruby'
         GLib::MainLoop::RUNNING_LOOPS << DummyLoop.new
         result = main_without_override
         ex = GLib::MainLoop::EXCEPTIONS.shift

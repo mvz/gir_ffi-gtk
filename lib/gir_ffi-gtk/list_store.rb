@@ -9,9 +9,7 @@ module Gtk
     setup_instance_method :set_value
 
     def set_value_with_value_conversion(iter, column, value)
-      if value.nil?
-        value = GObject::Value.for_gtype get_column_type(column)
-      end
+      value = GObject::Value.for_gtype get_column_type(column) if value.nil?
       set_value_without_value_conversion iter, column, value
     end
 

@@ -15,12 +15,14 @@ module Gtk
   class MessageDialog
     alias old_initialize initialize
 
+    # rubocop:disable Style/FormatStringToken
     def initialize(parent, flags, type, buttons, message)
       ptr = Gtk::Lib.gtk_message_dialog_new(parent, flags, type, buttons,
                                             '%s',
                                             :string, message)
       store_pointer(ptr)
     end
+    # rubocop:enable Style/FormatStringToken
 
     remove_method :old_initialize
   end
