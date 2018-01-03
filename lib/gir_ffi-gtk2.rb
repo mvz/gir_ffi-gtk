@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gir_ffi'
 
 GirFFI.setup :Gtk, '2.0'

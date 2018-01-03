@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gtk.load_class :TreeStore
 module Gtk
   # Overrides for GtkTreeStore

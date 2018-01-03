@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gtk.load_class :TargetEntry
 module Gtk
   # Overrides for GtkTargetEntry

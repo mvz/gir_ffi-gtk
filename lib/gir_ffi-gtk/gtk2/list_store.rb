@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gtk.load_class :ListStore
 module Gtk
   # Overrides for GtkListStore

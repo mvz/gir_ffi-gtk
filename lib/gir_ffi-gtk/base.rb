@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GirFFIGtk
   # Override init to automatically use ARGV as its argument.
   module AutoArgv

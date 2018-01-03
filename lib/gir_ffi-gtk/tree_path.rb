@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gtk.load_class :TreePath
 module Gtk
   # Add non-introspected function to Gtk::Lib

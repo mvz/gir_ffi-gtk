@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gtk.load_class :Container
 module Gtk
   # Overrides for GtkContainer
