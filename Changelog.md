@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.12.1 / 2018-05-31
+
+* Restore support for Ruby 2.1 and 2.2
+
 ## 0.12.0 / 2016-10-16
 
 * Depend on GirFFI 0.12.0
