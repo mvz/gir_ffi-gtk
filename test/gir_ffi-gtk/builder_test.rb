@@ -12,14 +12,14 @@ describe Gtk::Builder do
     EOS
   end
 
-  describe "#add_from_string" do
+  describe '#add_from_string' do
     it 'takes one string as argument' do
       builder.add_from_string spec
       pass
     end
   end
 
-  describe "#connect_signals" do
+  describe '#connect_signals' do
     before do
       builder.add_from_string spec
     end

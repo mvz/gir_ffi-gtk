@@ -1,11 +1,9 @@
-if RUBY_PLATFORM == 'java'
-  require 'rubygems'
-end
+require 'rubygems' if RUBY_PLATFORM == 'java'
 
 begin
   require 'simplecov'
   SimpleCov.start do
-    add_filter "/test/"
+    add_filter '/test/'
   end
 rescue LoadError
 end
@@ -27,7 +25,7 @@ class Minitest::Test
     assert true
   end
 
-  def ref_count object
+  def ref_count(object)
     GObject::Object::Struct.new(object.to_ptr)[:ref_count]
   end
 end

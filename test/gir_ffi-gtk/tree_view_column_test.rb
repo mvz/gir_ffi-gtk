@@ -3,9 +3,11 @@ require 'test_helper'
 describe Gtk::TreeViewColumn do
   describe '.new_with_attributes' do
     let(:renderer) { Gtk::CellRendererText.new }
-    let(:column) { Gtk::TreeViewColumn.new_with_attributes('foo-title',
-                                                           renderer,
-                                                           text: 1) }
+    let(:column) do
+      Gtk::TreeViewColumn.new_with_attributes('foo-title',
+                                              renderer,
+                                              text: 1)
+    end
     let(:list_store) { Gtk::ListStore.new([GObject::TYPE_INT, GObject::TYPE_STRING]) }
 
     it "sets the column's title" do
@@ -16,7 +18,7 @@ describe Gtk::TreeViewColumn do
       column.get_cells.to_a.must_equal [renderer]
     end
 
-    it "adds the attribute mapping for the renderer" do
+    it 'adds the attribute mapping for the renderer' do
       row = list_store.append
       list_store.set_value(row, 1, 'foo-value')
       column.cell_set_cell_data(list_store, row, false, false)
@@ -39,7 +41,7 @@ describe Gtk::TreeViewColumn do
       column.set_attributes(renderer, text: 1)
     end
 
-    it "adds the attribute mapping for the renderer" do
+    it 'adds the attribute mapping for the renderer' do
       row = list_store.append
       list_store.set_value(row, 1, 'foo-value')
       column.cell_set_cell_data(list_store, row, false, false)
