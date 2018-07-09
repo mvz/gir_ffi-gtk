@@ -3,13 +3,13 @@ require 'test_helper'
 describe Gtk::Builder do
   let(:builder) { Gtk::Builder.new }
   let(:spec) do
-    <<-EOS
+    <<-XML
       <interface>
       <object class="GtkButton" id="foo">
       <signal handler="on_button_clicked" name="clicked"/>
       </object>
       </interface>
-    EOS
+    XML
   end
 
   describe '#add_from_string' do
@@ -46,14 +46,14 @@ describe Gtk::Builder do
 
     describe 'with a signal with after flag' do
       let(:spec) do
-        <<-EOS
+        <<-XML
           <interface>
           <object class="GtkButton" id="foo">
           <signal handler="handler_after" name="clicked" after="true"/>
           <signal handler="handler_before" name="clicked"/>
           </object>
           </interface>
-        EOS
+        XML
       end
 
       it 'connects the handlers in the right order' do
