@@ -20,7 +20,7 @@ else
   require 'gir_ffi-gtk3'
 end
 
-class Minitest::Test
+module BaseTestExtensions
   def assert_nothing_raised
     yield
     assert true
@@ -30,5 +30,7 @@ class Minitest::Test
     GObject::Object::Struct.new(object.to_ptr)[:ref_count]
   end
 end
+
+Minitest::Test.send :include, BaseTestExtensions
 
 Gtk.init
