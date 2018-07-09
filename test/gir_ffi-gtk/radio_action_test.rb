@@ -19,7 +19,8 @@ describe Gtk::RadioAction do
 
     it 'accepts a GLib::SList object' do
       grp = action.get_group
-      other_action = Gtk::RadioAction.new 'other-name', 'other-label', 'other-tooltip', nil, 2
+      other_action = Gtk::RadioAction.new('other-name', 'other-label',
+                                          'other-tooltip', nil, 2)
       other_action.set_group grp
       pass
     end
