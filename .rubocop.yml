@@ -29,6 +29,10 @@ Layout/SpaceBeforeBlockBraces:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*' # Test describe blocks can be any size
+
 # Require lines to fit in pull requests.
 Metrics/LineLength:
   Max: 92
