@@ -6,6 +6,7 @@ begin
     add_filter '/test/'
   end
 rescue LoadError
+  nil # SimpleCov not available
 end
 
 require 'minitest/autorun'
