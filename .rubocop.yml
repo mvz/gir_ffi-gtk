@@ -3,8 +3,6 @@ AllCops:
     - 'test/**/*'
     - 'examples/*'
     - 'tmp/**/*'
-    - Rakefile
-    - gir_ffi-gtk.gemspec
   TargetRubyVersion: 2.2
 
 # RuboCop has no setting to accept how vim aligns parameters.
