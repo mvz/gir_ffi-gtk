@@ -16,8 +16,8 @@ module Gtk
     def child_get_property_with_override(widget, property_name)
       param_spec = object_class.find_child_property property_name
       unless param_spec
-        raise ArgumentError,
-          "child property named '#{property_name}' not found in #{self.class}"
+        raise(ArgumentError,
+              "child property named '#{property_name}' not found in #{self.class}")
       end
       gtype = param_spec.value_type
       gvalue = GObject::Value.for_gtype gtype

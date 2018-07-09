@@ -1,23 +1,37 @@
 AllCops:
   Exclude:
-    - 'test/**/*'
     - 'examples/*'
     - 'tmp/**/*'
-    - Rakefile
-    - gir_ffi-gtk.gemspec
   TargetRubyVersion: 2.2
-
-# RuboCop has no setting to accept how vim aligns parameters.
-Layout/AlignParameters:
-  Enabled: false
 
 # Dot at end of line makes it clearer that the line is not done
 Layout/DotPosition:
   EnforcedStyle: trailing
 
+# Multi-line assignment should be simply indented. Aligning them makes it even
+# harder to keep a sane line length.
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: same_line
+
+# Multi-line method calls should be simply indented. Aligning them makes it
+# even harder to keep a sane line length.
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Force consistent spacing independent of block contents
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyleForEmptyBraces: space
+
 # Allow if (foo = get_foo) style
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
+
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*' # Test describe blocks can be any size
 
 # Require lines to fit in pull requests.
 Metrics/LineLength:
@@ -27,17 +41,13 @@ Metrics/LineLength:
 Naming/AccessorMethodName:
   Enabled: false
 
-# FIXME: GirFFI-Gtk uses a gir_ffi-something naming scheme.
+# GirFFI-Gtk uses a gir_ffi-something naming scheme.
 Naming/FileName:
   Enabled: false
 
 # Allow and/or for control flow only
 Style/AndOr:
   EnforcedStyle: conditionals
-
-# TODO: Decide on the desired style (nested or compact)
-Style/ClassAndModuleChildren:
-  Enabled: false
 
 # Require at least two dependent lines before suggesting a guard clause
 Style/GuardClause:
