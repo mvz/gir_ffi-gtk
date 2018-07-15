@@ -5,7 +5,7 @@ describe Gtk do
     before do
       module DummyGtk
         def self.init(_arr)
-          %w[baz qux zonk]
+          %w(baz qux zonk)
         end
 
         include GirFFIGtk::AutoArgv
@@ -19,9 +19,9 @@ describe Gtk do
     end
 
     it 'replaces ARGV with the tail of the result of the original init function' do
-      ARGV.replace %w[foo bar]
+      ARGV.replace %w(foo bar)
       DummyGtk.init
-      assert_equal %w[qux zonk], ARGV.to_a
+      assert_equal %w(qux zonk), ARGV.to_a
     end
   end
 
