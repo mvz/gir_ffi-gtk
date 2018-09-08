@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.13.0 / 2018-09-08
+
+* Drop support for Ruby 2.1
+* Depend on GirFFI 0.13.0
+
 ## 0.12.1 / 2018-05-31
 
 * Restore support for Ruby 2.1 and 2.2
@@ -24,21 +29,21 @@ Git log for all changes.
 
 * Propagate exceptions from callbacks during event loops
 * Add new overrides:
-  * for Gtk::Container
-  * for Gtk::TreeViewColumn
-  * for Gtk::TreeStore
-  * for Gtk::ListStore
-  * for Gtk::TargetEntry.new
-  * for GtkBuilder#connect_signals
+  * for `Gtk::Container`
+  * for `Gtk::TreeViewColumn`
+  * for `Gtk::TreeStore`
+  * for `Gtk::ListStore`
+  * for `Gtk::TargetEntry.new`
+  * for `GtkBuilder#connect_signals`
 * Depend on GirFFI 0.9.0
 * Use GirFFI's new way of handling callback parameters and user data and
   destroy notifier handling
 
 ## 0.8.1 / 2015-12-02
 
-* Add override for Gtk::RadioAction#set_group
-* Add Gtk::Application example (thanks, cedlemo)
-* Add and update WebKit examples
+* Add override for `Gtk::RadioAction#set_group`
+* Add `Gtk::Application` example (thanks, cedlemo)
+* Add and update `WebKit` examples
 
 ## 0.8.0 / 2015-09-20
 
@@ -48,18 +53,18 @@ Git log for all changes.
 ## 0.7.2 / 2014-09-22
 
 * Require at least Ruby 1.9.3
-* Add overrides for Gtk::TreePath
-* Add overrides for Gtk::MessageDialog.new
-* Make other Ruby threads run during Gtk.main loop
+* Add overrides for `Gtk::TreePath`
+* Add overrides for `Gtk::MessageDialog.new`
+* Make other Ruby threads run during `Gtk.main` loop
 * Update dependencies
 * Update examples
 
 ## 0.7.1 / 2014-03-25
 
-* Fix Gtk::Builder#connect_signals_full by updating dependency on GirFFI
-* Only override Gtk::Menu#popup if needed
+* Fix `Gtk::Builder#connect_signals_full` by updating dependency on GirFFI
+* Only override `Gtk::Menu#popup` if needed
 * Test both Gtk+ 2 and 3
-* Provide constructors for Gtk::RadioButton if needed
+* Provide constructors for `Gtk::RadioButton` if needed
 
 ## 0.7.0 / 2014-01-11
 
@@ -75,8 +80,8 @@ Git log for all changes.
 
 ## 0.4.1 / 2012-09-22
 
-* New TreeView example (thanks, Kasper Johansen)
-* Implement Gtk::Menu#popup
+* New `TreeView` example (thanks, Kasper Johansen)
+* Implement `Gtk::Menu#popup`
 * Update dependency on GirFFI so interfaces can wrap pointers
 
 ## 0.4.0 / 2012-08-24
