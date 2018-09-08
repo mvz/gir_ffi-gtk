@@ -4,7 +4,7 @@ Gtk.load_class :Builder
 module Gtk
   # Overrides for GtkBuilder
   class Builder
-    setup_instance_method :add_from_string
+    setup_instance_method! :add_from_string
 
     def add_from_string_with_auto_length(buffer)
       add_from_string_without_auto_length buffer, buffer.length
@@ -13,7 +13,7 @@ module Gtk
     alias add_from_string_without_auto_length add_from_string
     alias add_from_string add_from_string_with_auto_length
 
-    setup_instance_method :connect_signals_full
+    setup_instance_method! :connect_signals_full
     remove_method :connect_signals
 
     AFTER_FLAG = GObject::ConnectFlags[:after]
