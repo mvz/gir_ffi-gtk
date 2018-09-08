@@ -4,7 +4,7 @@ Gtk.load_class :TargetEntry
 module Gtk
   # Overrides for GtkTargetEntry
   class TargetEntry
-    setup_method :new
+    setup_method! :new
 
     def initialize_with_flags_conversion(target, flags, info)
       native_flags = Gtk::TargetFlags.to_native flags, nil

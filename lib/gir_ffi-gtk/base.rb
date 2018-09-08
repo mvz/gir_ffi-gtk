@@ -57,8 +57,8 @@ end
 
 # Overrides for Gtk module functions
 module Gtk
-  setup_method 'init'
-  setup_method 'main'
+  setup_method! 'init'
+  setup_method! 'main'
 
   include GirFFIGtk::AutoArgv
   include GirFFIGtk::MainLoopOverride

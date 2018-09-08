@@ -26,7 +26,7 @@ module Gtk
     end
 
     if Gtk::MAJOR_VERSION == 2
-      setup_instance_method 'get_indices'
+      setup_instance_method! 'get_indices'
       remove_method :get_indices
 
       def get_indices
