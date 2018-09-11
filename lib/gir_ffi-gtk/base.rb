@@ -49,6 +49,7 @@ module GirFFIGtk
         ex = GLib::MainLoop::EXCEPTIONS.shift
         GLib::MainLoop::RUNNING_LOOPS.pop
         raise ex if ex
+
         result
       end
     end
