@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.13.1 / 2018-09-24
+
+* Depend on GirFFI 0.13.1
+* Add overrides for some methods that take a Gtk::IconSize parameter
+
 ## 0.13.0 / 2018-09-08
 
 * Drop support for Ruby 2.1
