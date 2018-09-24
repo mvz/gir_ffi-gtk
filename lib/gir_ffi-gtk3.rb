@@ -14,4 +14,5 @@ require 'gir_ffi-gtk/tree_path'
 require 'gir_ffi-gtk/tree_store'
 require 'gir_ffi-gtk/tree_view_column'
 
+require 'gir_ffi-gtk/gtk3/button'
 require 'gir_ffi-gtk/gtk3/target_entry'
