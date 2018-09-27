@@ -3,10 +3,16 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.14.0 / 2018-09-27
+
+* Depend on GirFFI 0.14.0
+* Add override for `Gtk::Dialog.new_with_buttons`
+* Add override for `Gtk::FileChooserDialog.new`
+
 ## 0.13.1 / 2018-09-24
 
 * Depend on GirFFI 0.13.1
-* Add overrides for some methods that take a Gtk::IconSize parameter
+* Add overrides for some methods that take a `Gtk::IconSize` parameter
 
 ## 0.13.0 / 2018-09-08
 
