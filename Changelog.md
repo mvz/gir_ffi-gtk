@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.14.1 / 2018-12-19
+
+* Override `Gtk::Widget#get_events`, `Gtk::Widget#set_events` and
+  `Gtk::Widget#add_events` methods to take and return `EventMask` values
+  instead of bare `int`s.
+* Fix license in gemspec; it's LGPL 2.1 or later
+
 ## 0.14.0 / 2018-09-27
 
 * Depend on GirFFI 0.14.0
