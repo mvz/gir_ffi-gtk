@@ -2,7 +2,7 @@ AllCops:
   Exclude:
     - 'examples/*'
     - 'tmp/**/*'
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.3
 
 # Dot at end of line makes it clearer that the line is not done
 Layout/DotPosition:
