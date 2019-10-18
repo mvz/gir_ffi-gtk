@@ -13,23 +13,23 @@ describe Gtk::TreeViewColumn do
     let(:list_store) { Gtk::ListStore.new([GObject::TYPE_INT, GObject::TYPE_STRING]) }
 
     it "sets the column's title" do
-      column.title.must_equal 'foo-title'
+      _(column.title).must_equal 'foo-title'
     end
 
     it 'packs the renderer into the column' do
-      column.get_cells.to_a.must_equal [renderer]
+      _(column.get_cells.to_a).must_equal [renderer]
     end
 
     it 'adds the attribute mapping for the renderer' do
       row = list_store.append
       list_store.set_value(row, 1, 'foo-value')
       column.cell_set_cell_data(list_store, row, false, false)
-      renderer.text.must_equal 'foo-value'
+      _(renderer.text).must_equal 'foo-value'
     end
 
     it 'allows not specifying any attributes' do
       col = Gtk::TreeViewColumn.new_with_attributes('foo-title', renderer)
-      col.must_be_instance_of Gtk::TreeViewColumn
+      _(col).must_be_instance_of Gtk::TreeViewColumn
     end
   end
 
@@ -47,7 +47,7 @@ describe Gtk::TreeViewColumn do
       row = list_store.append
       list_store.set_value(row, 1, 'foo-value')
       column.cell_set_cell_data(list_store, row, false, false)
-      renderer.text.must_equal 'foo-value'
+      _(renderer.text).must_equal 'foo-value'
     end
   end
 end

@@ -7,7 +7,7 @@ describe Gtk::RadioAction do
     it 'returns a GLib::SList object' do
       action = Gtk::RadioAction.new 'name', 'label', 'tooltip', nil, 1
       grp = action.get_group
-      grp.must_be_instance_of GLib::SList
+      _(grp).must_be_instance_of GLib::SList
     end
   end
 

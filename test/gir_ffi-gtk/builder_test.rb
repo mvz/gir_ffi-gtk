@@ -33,7 +33,7 @@ describe Gtk::Builder do
         nil
       end
 
-      name.must_equal 'on_button_clicked'
+      _(name).must_equal 'on_button_clicked'
     end
 
     it 'connects the signal to the proc returned by the block' do
@@ -43,7 +43,7 @@ describe Gtk::Builder do
       end
       button = builder.get_object('foo')
       GObject.signal_emit button, 'clicked'
-      name.must_equal 'on_button_clicked'
+      _(name).must_equal 'on_button_clicked'
     end
 
     describe 'with a signal with after flag' do
@@ -65,7 +65,7 @@ describe Gtk::Builder do
         end
         button = builder.get_object('foo')
         GObject.signal_emit button, 'clicked'
-        name.must_equal 'handler_after'
+        _(name).must_equal 'handler_after'
       end
     end
   end

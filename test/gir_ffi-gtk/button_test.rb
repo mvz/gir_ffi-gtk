@@ -10,12 +10,12 @@ describe Gtk::Button do
 
     it 'works when called with a symbol' do
       result = Gtk::Button.new_from_icon_name('hi', :dialog)
-      result.must_be_instance_of Gtk::Button
+      _(result).must_be_instance_of Gtk::Button
     end
 
     it 'works when called with an integer' do
       result = Gtk::Button.new_from_icon_name('hi', 4)
-      result.must_be_instance_of Gtk::Button
+      _(result).must_be_instance_of Gtk::Button
     end
   end
 end

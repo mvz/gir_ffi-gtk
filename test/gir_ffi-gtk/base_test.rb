@@ -43,7 +43,7 @@ describe Gtk do
 
       slow_thread.join
 
-      a.last.must_equal 'After run'
+      _(a.last).must_equal 'After run'
     end
   end
 end

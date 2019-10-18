@@ -16,7 +16,7 @@ describe 'An exception in a callback' do
 
     describe 'when the signal is emitted synchronously' do
       it 'raises an error' do
-        -> { GObject.signal_emit object, 'destroy' }.must_raise CallbackTestException
+        _(-> { GObject.signal_emit object, 'destroy' }).must_raise CallbackTestException
       end
     end
 
@@ -28,9 +28,7 @@ describe 'An exception in a callback' do
         end
         # Guard against runaway loop
         @guard = GLib.timeout_add(GLib::PRIORITY_DEFAULT, 1000) { Gtk.main_quit }
-        proc do
-          Gtk.main
-        end.must_raise CallbackTestException
+        _(-> { Gtk.main }).must_raise CallbackTestException
       end
 
       after do
@@ -47,9 +45,7 @@ describe 'An exception in a callback' do
         end
         # Guard against runaway loop
         @guard = GLib.timeout_add(GLib::PRIORITY_DEFAULT, 1000) { Gtk.main_quit }
-        proc do
-          Gtk.main
-        end.must_raise CallbackTestException
+        _(-> { Gtk.main }).must_raise CallbackTestException
       end
 
       after do
