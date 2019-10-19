@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.15.0 / 2019-10-19
+
+* Fix override for `Gtk::Menu#popup`
+* Depend on GirFFI 0.15.0
+* Target Ruby 2.4+
+
 ## 0.14.1 / 2018-12-19
 
 * Override `Gtk::Widget#get_events`, `Gtk::Widget#set_events` and
