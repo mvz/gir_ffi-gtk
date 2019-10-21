@@ -6,10 +6,6 @@ AllCops:
     - 'tmp/**/*'
   TargetRubyVersion: 2.4
 
-# Dot at end of line makes it clearer that the line is not done
-Layout/DotPosition:
-  EnforcedStyle: trailing
-
 # Multi-line assignment should be simply indented. Aligning them makes it even
 # harder to keep a sane line length.
 Layout/MultilineOperationIndentation:
@@ -63,6 +59,10 @@ Style/PercentLiteralDelimiters:
 # Allow explicit return with multiple return values
 Style/RedundantReturn:
   AllowMultipleReturnValues: true
+
+# Don't commit to presence or absence of interpolation
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
 
 # Prefer symbols to look like symbols
 Style/SymbolArray:

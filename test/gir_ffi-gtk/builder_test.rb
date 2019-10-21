@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 describe Gtk::Builder do
   let(:builder) { Gtk::Builder.new }
@@ -14,39 +14,39 @@ describe Gtk::Builder do
     XML
   end
 
-  describe '#add_from_string' do
-    it 'takes one string as argument' do
+  describe "#add_from_string" do
+    it "takes one string as argument" do
       builder.add_from_string spec
       pass
     end
   end
 
-  describe '#connect_signals' do
+  describe "#connect_signals" do
     before do
       builder.add_from_string spec
     end
 
-    it 'passes the handler name to the block' do
+    it "passes the handler name to the block" do
       name = nil
       builder.connect_signals do |handler_name|
         name = handler_name
         nil
       end
 
-      _(name).must_equal 'on_button_clicked'
+      _(name).must_equal "on_button_clicked"
     end
 
-    it 'connects the signal to the proc returned by the block' do
+    it "connects the signal to the proc returned by the block" do
       name = nil
       builder.connect_signals do |handler_name|
         proc { name = handler_name }
       end
-      button = builder.get_object('foo')
-      GObject.signal_emit button, 'clicked'
-      _(name).must_equal 'on_button_clicked'
+      button = builder.get_object("foo")
+      GObject.signal_emit button, "clicked"
+      _(name).must_equal "on_button_clicked"
     end
 
-    describe 'with a signal with after flag' do
+    describe "with a signal with after flag" do
       let(:spec) do
         <<-XML
           <interface>
@@ -58,14 +58,14 @@ describe Gtk::Builder do
         XML
       end
 
-      it 'connects the handlers in the right order' do
+      it "connects the handlers in the right order" do
         name = nil
         builder.connect_signals do |handler_name|
           proc { name = handler_name }
         end
-        button = builder.get_object('foo')
-        GObject.signal_emit button, 'clicked'
-        _(name).must_equal 'handler_after'
+        button = builder.get_object("foo")
+        GObject.signal_emit button, "clicked"
+        _(name).must_equal "handler_after"
       end
     end
   end

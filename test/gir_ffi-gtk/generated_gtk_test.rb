@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 # Tests generated methods and functions in the Gtk namespace.
-describe 'In the generated Gtk module' do
-  describe 'a Gtk::Builder instance' do
+describe "In the generated Gtk module" do
+  describe "a Gtk::Builder instance" do
     before do
       @builder = Gtk::Builder.new
       @spec = '
@@ -16,31 +16,31 @@ describe 'In the generated Gtk module' do
       '
     end
 
-    it 'loads the interface spec' do
+    it "loads the interface spec" do
       assert_nothing_raised { @builder.add_from_string @spec }
     end
 
-    describe 'its #get_object method' do
-      it 'returns objects of the proper class' do
+    describe "its #get_object method" do
+      it "returns objects of the proper class" do
         @builder.add_from_string @spec
-        o = @builder.get_object 'foo'
+        o = @builder.get_object "foo"
         assert_instance_of Gtk::Button, o
       end
     end
 
-    describe 'its #connect_signals_full method' do
+    describe "its #connect_signals_full method" do
       before do
         @builder.add_from_string @spec
       end
-      it 'passes arguments correctly' do
+      it "passes arguments correctly" do
         aa = nil
         @builder.connect_signals_full { |*args| aa = args }
         b, o, sn, hn, co, f, ud = aa
         assert_instance_of Gtk::Builder, b
         assert_equal b.to_ptr, @builder.to_ptr
         assert_instance_of Gtk::Button, o
-        assert_equal 'clicked', sn
-        assert_equal 'on_button_clicked', hn
+        assert_equal "clicked", sn
+        assert_equal "on_button_clicked", hn
         _(co).must_be_nil
         assert_equal 0, f
         _(ud).wont_be_nil
@@ -48,12 +48,12 @@ describe 'In the generated Gtk module' do
     end
   end
 
-  describe 'a Gtk::Window instance' do
+  describe "a Gtk::Window instance" do
     before do
       @w = Gtk::Window.new :toplevel
     end
 
-    it 'starts with a refcount of 2 (one for us, one for GTK+)' do
+    it "starts with a refcount of 2 (one for us, one for GTK+)" do
       assert_equal 2, ref_count(@w)
     end
   end

@@ -43,7 +43,7 @@ module GirFFIGtk
     # Implementation of class methods for MainLoopOverride
     module ClassMethods
       def main_with_override
-        GLib::MainLoop::ThreadEnabler.instance.setup_idle_handler if RUBY_ENGINE == 'ruby'
+        GLib::MainLoop::ThreadEnabler.instance.setup_idle_handler if RUBY_ENGINE == "ruby"
         GLib::MainLoop::RUNNING_LOOPS << DummyLoop.new
         result = main_without_override
         ex = GLib::MainLoop::EXCEPTIONS.shift
@@ -58,8 +58,8 @@ end
 
 # Overrides for Gtk module functions
 module Gtk
-  setup_method! 'init'
-  setup_method! 'main'
+  setup_method! "init"
+  setup_method! "main"
 
   include GirFFIGtk::AutoArgv
   include GirFFIGtk::MainLoopOverride

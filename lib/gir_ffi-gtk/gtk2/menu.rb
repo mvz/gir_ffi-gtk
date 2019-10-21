@@ -7,7 +7,7 @@ module Gtk
     attach_function(:gtk_menu_popup,
                     [:pointer, :pointer, :pointer,
                      :pointer, :pointer,
-                     :uint, :uint32 ],
+                     :uint, :uint32],
                     :void)
   end
 
@@ -24,4 +24,3 @@ module Gtk
     end
   end
 end
-

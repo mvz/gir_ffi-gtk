@@ -19,7 +19,7 @@ module Gtk
 
     def initialize(parent, flags, type, buttons, message)
       ptr = Gtk::Lib.gtk_message_dialog_new(parent, flags, type, buttons,
-                                            '%s',
+                                            "%s",
                                             :string, message)
       store_pointer(ptr)
     end
