@@ -1,22 +1,23 @@
-require: rubocop-performance
+require:
+  - rubocop-performance
 
 AllCops:
   Exclude:
-    - 'examples/*'
     - 'tmp/**/*'
   TargetRubyVersion: 2.4
 
-# Multi-line assignment should be simply indented. Aligning them makes it even
-# harder to keep a sane line length.
-Layout/MultilineOperationIndentation:
-  EnforcedStyle: indented
-
+# Don't force lonely closing parentheses
 Layout/MultilineMethodCallBraceLayout:
   EnforcedStyle: same_line
 
 # Multi-line method calls should be simply indented. Aligning them makes it
 # even harder to keep a sane line length.
 Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Multi-line assignment should be simply indented. Aligning them makes it even
+# harder to keep a sane line length.
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
 # Force consistent spacing independent of block contents
@@ -31,6 +32,7 @@ Lint/AmbiguousBlockAssociation:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
+# Test describe blocks can be any size
 Metrics/BlockLength:
   Exclude:
     - 'test/**/*' # Test describe blocks can be any size
@@ -39,17 +41,13 @@ Metrics/BlockLength:
 Metrics/LineLength:
   Max: 95
 
-# GObject has a lot of accessor method starting with get_ or set_
-Naming/AccessorMethodName:
-  Enabled: false
-
-# GirFFI uses a gir_ffi-something naming scheme.
-Naming/FileName:
-  Enabled: false
-
 # Allow and/or for control flow only
 Style/AndOr:
   EnforcedStyle: conditionals
+
+# Require at least two dependent lines before suggesting a guard clause
+Style/GuardClause:
+  MinBodyLength: 2
 
 # Use older RuboCop default
 Style/PercentLiteralDelimiters:
@@ -60,7 +58,7 @@ Style/PercentLiteralDelimiters:
 Style/RedundantReturn:
   AllowMultipleReturnValues: true
 
-# Don't commit to presence or absence of interpolation
+# Do not commit to use of interpolation
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
@@ -69,6 +67,14 @@ Style/SymbolArray:
   EnforcedStyle: brackets
 
 # Project-specific configuration goes here.
+
+# GObject has a lot of accessor method starting with get_ or set_
+Naming/AccessorMethodName:
+  Enabled: false
+
+# GirFFI uses a gir_ffi-something naming scheme.
+Naming/FileName:
+  Enabled: false
 
 # Accessors are only trivial if they match the ivar name.
 Style/TrivialAccessors:
