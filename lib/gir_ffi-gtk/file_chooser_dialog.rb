@@ -19,6 +19,8 @@ module Gtk
       obj
     end
 
+    alias old_initialize initialize
+
     def initialize(title, parent, action, buttons)
       button_params = buttons.flat_map do |button_text, button_response|
         [:string, button_text, :int, Gtk::ResponseType.to_int(button_response)]
@@ -27,5 +29,7 @@ module Gtk
                                                  *button_params, :string, nil)
       store_pointer(ptr)
     end
+
+    remove_method :old_initialize
   end
 end
