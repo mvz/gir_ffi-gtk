@@ -8,6 +8,7 @@ GirFFI.setup :GtkSource
 
 Gtk.init
 
+# Test implementation of the GtkSource::CompletionProvider interface.
 class TestProvider < GObject::Object
   include GtkSource::CompletionProvider
 
