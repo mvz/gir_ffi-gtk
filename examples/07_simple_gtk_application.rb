@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 
 require 'gir_ffi-gtk3'
 

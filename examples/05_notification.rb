@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 #
 # Simple notification example.
 require 'gir_ffi-gtk3'

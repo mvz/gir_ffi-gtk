@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 #
 # Based on https://web.archive.org/web/20110228141616/http://www.idle-hacking.com/2010/02/webkit-ruby-and-gtk/
 #

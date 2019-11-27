@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 #
 # Based on the empty window Gtk+ tutorial example at
 # http://library.gnome.org/devel/gtk-tutorial/2.90/c39.html
