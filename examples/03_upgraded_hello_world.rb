@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 #
 # Based on the 'Upgraded Hello world' Gtk+ tutorial example at
 # http://library.gnome.org/devel/gtk-tutorial/2.90/x344.html
 #
-require 'gir_ffi-gtk3'
+require "gir_ffi-gtk3"
 
-callback = lambda { |widget, data|
+callback = lambda { |_widget, data|
   puts "Hello again - #{data} was pressed"
 }
 
 Gtk.init
 
 win = Gtk::Window.new(:toplevel)
-win.title= "Hello Buttons!"
+win.title = "Hello Buttons!"
 
 win.signal_connect "delete-event" do
   Gtk.main_quit

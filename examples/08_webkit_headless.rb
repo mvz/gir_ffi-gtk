@@ -1,6 +1,8 @@
-require 'gir_ffi-gtk3'
+# frozen_string_literal: true
 
-GirFFI.setup :WebKit, '3.0'
+require "gir_ffi-gtk3"
+
+GirFFI.setup :WebKit, "3.0"
 
 Gtk.init
 
@@ -15,7 +17,7 @@ web_view.signal_connect "load-finished" do
   Gtk.main_quit
 end
 
-web_view.load_uri('http://www.google.com/')
+web_view.load_uri("http://www.google.com/")
 win.show_all
 
 Gtk.main
