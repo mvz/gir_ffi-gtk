@@ -1,4 +1,6 @@
-require 'gir_ffi-gtk3'
+# frozen_string_literal: true
+
+require "gir_ffi-gtk3"
 
 # This is an example of creating a derived class with vfunc implementations.
 
@@ -6,11 +8,12 @@ GirFFI.setup :GtkSource
 
 Gtk.init
 
+# Test implementation of the GtkSource::CompletionProvider interface.
 class TestProvider < GObject::Object
   include GtkSource::CompletionProvider
 
   def get_name
-    'Test Provider'
+    "Test Provider"
   end
 
   def get_priority
@@ -27,7 +30,7 @@ class TestProvider < GObject::Object
     proposals = [
       GtkSource::CompletionItem.new("Proposal 1", "Proposal 1", icon, "blah 1"),
       GtkSource::CompletionItem.new("Proposal 2", "Proposal 2", icon, "blah 2"),
-      GtkSource::CompletionItem.new("Proposal 3", "Proposal 3", icon, "blah 3"),
+      GtkSource::CompletionItem.new("Proposal 3", "Proposal 3", icon, "blah 3")
     ]
     context.add_proposals(self, proposals, true)
   end

@@ -1,9 +1,10 @@
-#!/usr/bin/env ruby
+# frozen_string_literal: true
+
 #
 # Based on the 'Hello world' Gtk+ tutorial example at
 # http://library.gnome.org/devel/gtk-tutorial/2.90/c39.html#SEC-HELLOWORLD
 #
-require 'gir_ffi-gtk3'
+require "gir_ffi-gtk3"
 
 Gtk.init
 

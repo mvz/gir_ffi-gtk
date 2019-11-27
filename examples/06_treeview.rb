@@ -1,27 +1,23 @@
-#!/usr/bin/env ruby
-#
-$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
-require 'gir_ffi-gtk3'
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), "..", "lib")
+require "gir_ffi-gtk3"
 
 Gtk.init
 
-
-#Add window.
+# Add window.
 win = Gtk::Window.new(:toplevel)
 win.resize(640, 480)
 win.signal_connect("destroy") { Gtk.main_quit }
 
-
-#Add treeview.
+# Add treeview.
 tv = Gtk::TreeView.new
 
-
-#Add store.
+# Add store.
 ls = Gtk::ListStore.new([GObject::TYPE_STRING])
 tv.set_model(ls)
 
-
-#Add column.
+# Add column.
 lab = Gtk::Label.new("Name")
 rend = Gtk::CellRendererText.new
 
@@ -34,14 +30,12 @@ lab.show
 
 tv.append_column(col)
 
-
-#Add rows.
+# Add rows.
 iter = ls.append
 ls.set_value(iter, 0, "Kasper")
 
 iter = ls.append
 ls.set_value(iter, 0, "Christina")
-
 
 win.add tv
 tv.show

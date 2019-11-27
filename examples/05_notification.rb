@@ -1,7 +1,8 @@
-#!/usr/bin/env ruby
+# frozen_string_literal: true
+
 #
 # Simple notification example.
-require 'gir_ffi-gtk3'
+require "gir_ffi-gtk3"
 
 GirFFI.setup :Notify
 
@@ -15,16 +16,16 @@ nf.timeout = 3000
 nf.urgency = :critical
 
 # Show a button 'Test' in the notification, with a callback function.
-nf.add_action("test", "Test") { |obj, action, user_data|
+nf.add_action("test", "Test") do |_obj, action, _user_data|
   puts "Action #{action} clicked."
-}
+end
 
 # In this case, we want the program to end once the notification is gone,
 # but not before.
-nf.signal_connect("closed") {
+nf.signal_connect("closed") do
   puts "Notification closed."
   Gtk.main_quit
-}
+end
 
 # Show the notification.
 nf.show
