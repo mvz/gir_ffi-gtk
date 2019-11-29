@@ -7,8 +7,8 @@ services:
 
 before_install:
   - sudo apt-get update
-  # Provides libgirepository-1.0.so
-  - sudo apt-get install libgirepository1.0-dev
+  # Provides libgirepository-1.0.so.1
+  - sudo apt-get install libgirepository-1.0-1
   # Provides Gtk-3.0.typelib
   - sudo apt-get install gir1.2-gtk-3.0
   # Provides Gtk-2.0.typelib
@@ -29,8 +29,8 @@ rvm:
 
 matrix:
   allow_failures:
-    - rvm: jruby-head
     - rvm: ruby-head
+    - rvm: jruby-head
 
 branches:
   only:
