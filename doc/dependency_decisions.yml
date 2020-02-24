@@ -1,0 +1,19 @@
+---
+- - :permit
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2020-02-24 18:41:20.140445895 Z
+- - :permit
+  - LGPL-2.1+
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2020-02-24 18:41:39.412089521 Z
+- - :permit
+  - New BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2020-02-24 18:42:44.424528799 Z
