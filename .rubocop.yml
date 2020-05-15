@@ -36,14 +36,6 @@ Lint/AmbiguousBlockAssociation:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
-# Activate new cops from RuboCop 0.81 and 0.82
-Lint/RaiseException:
-  Enabled: true
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-Lint/StructNewOverride:
-  Enabled: true
-
 # Test describe blocks can be any size
 Metrics/BlockLength:
   Exclude:
@@ -53,21 +45,9 @@ Metrics/BlockLength:
 Style/AndOr:
   EnforcedStyle: conditionals
 
-# Activate new cop from RuboCop 0.82
-Style/ExponentialNotation:
-  Enabled: true
-
 # Require at least two dependent lines before suggesting a guard clause
 Style/GuardClause:
   MinBodyLength: 2
-
-# Activate new cops from RuboCop 0.80
-Style/HashEachMethods:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true
 
 # Use older RuboCop default
 Style/PercentLiteralDelimiters:
@@ -87,6 +67,32 @@ Style/StringLiterals:
 Style/SymbolArray:
   EnforcedStyle: brackets
 
+# Accessors are only trivial if they match the ivar name.
+Style/TrivialAccessors:
+  ExactNameMatch: true
+
+# Activate new cops from RuboCop 0.80 - 0.84
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Style/ExponentialNotation:
+  Enabled: true
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
+
 # Project-specific configuration goes here.
 
 # GObject has a lot of accessor method starting with get_ or set_
@@ -96,7 +102,3 @@ Naming/AccessorMethodName:
 # GirFFI uses a gir_ffi-something naming scheme.
 Naming/FileName:
   Enabled: false
-
-# Accessors are only trivial if they match the ivar name.
-Style/TrivialAccessors:
-  ExactNameMatch: true
