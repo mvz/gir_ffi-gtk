@@ -1,10 +1,18 @@
 require:
+  - rubocop-minitest
+  - rubocop-packaging
   - rubocop-performance
 
 AllCops:
   Exclude:
     - 'tmp/**/*'
+    - 'vendor/bundle/**/*'
+  NewCops: enable
   TargetRubyVersion: 2.5
+
+# Make BeginEndAlignment behavior match EndAlignment
+Layout/BeginEndAlignment:
+  EnforcedStyleAlignWith: begin
 
 # Be lenient with line length
 Layout/LineLength:
@@ -41,6 +49,9 @@ Metrics/BlockLength:
   Exclude:
     - 'test/**/*' # Test describe blocks can be any size
 
+Performance/StartWith:
+  AutoCorrect: true
+
 # Allow and/or for control flow only
 Style/AndOr:
   EnforcedStyle: conditionals
@@ -67,31 +78,9 @@ Style/StringLiterals:
 Style/SymbolArray:
   EnforcedStyle: brackets
 
-# Accessors are only trivial if they match the ivar name.
+# Accessors are only trivial if they match the ivar name
 Style/TrivialAccessors:
   ExactNameMatch: true
-
-# Activate new cops from RuboCop 0.80 - 0.84
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: true
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-Lint/DeprecatedOpenSSLConstant:
-  Enabled: true
-Lint/RaiseException:
-  Enabled: true
-Lint/StructNewOverride:
-  Enabled: true
-Style/ExponentialNotation:
-  Enabled: true
-Style/HashEachMethods:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true
-Style/SlicingWithRange:
-  Enabled: true
 
 # Project-specific configuration goes here.
 

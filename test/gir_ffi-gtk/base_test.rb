@@ -2,18 +2,16 @@
 
 require "test_helper"
 
+module DummyGtk
+  def self.init(_arr)
+    %w(baz qux zonk)
+  end
+
+  include GirFFIGtk::AutoArgv
+end
+
 describe Gtk do
   describe "::init" do
-    before do
-      module DummyGtk
-        def self.init(_arr)
-          %w(baz qux zonk)
-        end
-
-        include GirFFIGtk::AutoArgv
-      end
-    end
-
     it "does not take any arguments" do
       assert_raises(ArgumentError) { DummyGtk.init 1, ["foo"] }
       assert_raises(ArgumentError) { DummyGtk.init ["foo"] }

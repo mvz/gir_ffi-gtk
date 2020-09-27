@@ -1,18 +1,13 @@
 # frozen_string_literal: true
 
-require "rubygems" if RUBY_PLATFORM == "java"
-
-begin
-  require "simplecov"
-  SimpleCov.start do
-    add_filter "/test/"
-  end
-rescue LoadError
-  nil # SimpleCov not available
+require "simplecov"
+SimpleCov.start do
+  add_group "Main", "lib"
+  add_group "Tests", "test"
+  enable_coverage :branch
 end
 
 require "minitest/autorun"
-require "rr"
 
 Thread.abort_on_exception = true
 
