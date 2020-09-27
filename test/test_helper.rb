@@ -12,7 +12,6 @@ rescue LoadError
 end
 
 require "minitest/autorun"
-require "rr"
 
 Thread.abort_on_exception = true
 

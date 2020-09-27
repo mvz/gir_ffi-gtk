@@ -25,5 +25,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest", "~> 5.12"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rake-manifest", "~> 0.1.0"
-  spec.add_development_dependency "rr", "~> 1.1"
 end
