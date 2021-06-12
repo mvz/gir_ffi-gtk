@@ -8,7 +8,7 @@ describe Gtk::Container do
 
   describe "#add_with_properties" do
     before do
-      container.add_with_properties widget, 'left-attach': 1
+      container.add_with_properties widget, "left-attach": 1
     end
 
     it "adds the widget to the container" do
