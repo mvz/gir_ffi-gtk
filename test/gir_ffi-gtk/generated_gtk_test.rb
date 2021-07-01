@@ -7,13 +7,13 @@ describe "In the generated Gtk module" do
   describe "a Gtk::Builder instance" do
     before do
       @builder = Gtk::Builder.new
-      @spec = '
+      @spec = <<~XML
         <interface>
         <object class="GtkButton" id="foo">
         <signal handler="on_button_clicked" name="clicked"/>
         </object>
         </interface>
-      '
+      XML
     end
 
     it "loads the interface spec" do
