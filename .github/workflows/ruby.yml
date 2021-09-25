@@ -17,41 +17,41 @@ jobs:
 
     strategy:
       matrix:
-        ruby: [2.5, 2.6, 2.7, "3.0", jruby-9.2]
+        ruby: [2.6, 2.7, "3.0", jruby-9.3]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install non-ruby dependencies
-      run: |
-        # Provides libgirepository-1.0.so.1
-        sudo apt-get install libgirepository-1.0-1
-        # Provides Gtk-3.0.typelib
-        sudo apt-get install gir1.2-gtk-3.0
-        # Provides Gtk-2.0.typelib
-        sudo apt-get install gir1.2-gtk-2.0
-        # Needed to provide A11y dbus service to silence warnings
-        sudo apt-get install at-spi2-core
-        # Provides xvfb-run
-        sudo apt-get install xvfb
+      - uses: actions/checkout@v2
+      - name: Install non-ruby dependencies
+        run: |
+          # Provides libgirepository-1.0.so.1
+          sudo apt-get install libgirepository-1.0-1
+          # Provides Gtk-3.0.typelib
+          sudo apt-get install gir1.2-gtk-3.0
+          # Provides Gtk-2.0.typelib
+          sudo apt-get install gir1.2-gtk-2.0
+          # Needed to provide A11y dbus service to silence warnings
+          sudo apt-get install at-spi2-core
+          # Provides xvfb-run
+          sudo apt-get install xvfb
 
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby }}
-        bundler-cache: true
-    - name: Run tests under xvfb
-      run: xvfb-run bundle exec rake
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+      - name: Run tests under xvfb
+        run: xvfb-run bundle exec rake
 
   rubocop:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.7
-        bundler-cache: true
-    - name: Run RuboCop
-      run: bundle exec rubocop -P
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+      - name: Run RuboCop
+        run: bundle exec rubocop -P
