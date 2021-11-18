@@ -3,6 +3,7 @@
 Gem::Specification.new do |spec|
   spec.name = "gir_ffi-gtk"
   spec.version = "0.15.0"
+
   spec.authors = ["Matijs van Zuijlen"]
   spec.email = ["matijs@matijs.net"]
 
@@ -16,6 +17,7 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/mvz/gir_ffi-gtk"
   spec.metadata["changelog_uri"] = "https://github.com/mvz/gir_ffi-gtk/blob/master/Changelog.md"
+  spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files = File.read("Manifest.txt").split
   spec.require_paths = ["lib"]
