@@ -14,4 +14,4 @@ end
 
 task build: "manifest:check"
 
-task default: :test
+task default: [:test, "manifest:check"]
