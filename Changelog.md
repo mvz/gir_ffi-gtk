@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.15.1 / 2022-01-21
+
+* Silence warnings about redefining initialize in FileChooserDialog override
+* Depend on GirFFI 0.15.2
+* Target Ruby 2.6+
+
 ## 0.15.0 / 2019-10-19
 
 * Fix override for `Gtk::Menu#popup`
