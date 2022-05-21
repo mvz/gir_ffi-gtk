@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.16.0 / 2022-05-21
+
+* Drop support for Ruby 2.6 and JRuby
+* Depend on GirFFI 0.16.0
+
 ## 0.15.1 / 2022-01-21
 
 * Silence warnings about redefining initialize in FileChooserDialog override
