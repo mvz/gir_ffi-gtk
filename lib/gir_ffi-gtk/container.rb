@@ -14,7 +14,7 @@ module Gtk
     setup_instance_method! :child_get_property
 
     def child_get_property_with_override(widget, property_name)
-      param_spec = object_class.find_child_property property_name
+      param_spec = class_struct.find_child_property property_name
       unless param_spec
         raise(ArgumentError,
               "child property named '#{property_name}' not found in #{self.class}")
