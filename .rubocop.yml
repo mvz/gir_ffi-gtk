@@ -9,7 +9,7 @@ require:
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
 
 # Make BeginEndAlignment behavior match EndAlignment
 Layout/BeginEndAlignment:
@@ -52,7 +52,7 @@ Lint/AssignmentInCondition:
 # Test describe blocks can be any size
 Metrics/BlockLength:
   Exclude:
-    - 'test/**/*' # Test describe blocks can be any size
+    - 'test/**/*'  # Test describe blocks can be any size
 
 # Allow semantic variation in and/or external determination of symbols
 Naming/VariableNumber:
