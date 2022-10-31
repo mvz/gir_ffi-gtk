@@ -21,6 +21,7 @@ describe Gtk do
     it "replaces ARGV with the tail of the result of the original init function" do
       ARGV.replace %w(foo bar)
       DummyGtk.init
+
       assert_equal %w(qux zonk), ARGV.to_a
     end
   end

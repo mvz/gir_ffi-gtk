@@ -20,6 +20,7 @@ describe Gtk::RadioButton do
     it "returns a GLib::SList object" do
       btn = Gtk::RadioButton.new_from_widget nil
       grp = btn.get_group
+
       assert_instance_of GLib::SList, grp
     end
   end
