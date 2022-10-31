@@ -24,6 +24,7 @@ describe "In the generated Gtk module" do
       it "returns objects of the proper class" do
         @builder.add_from_string @spec
         o = @builder.get_object "foo"
+
         assert_instance_of Gtk::Button, o
       end
     end
@@ -36,12 +37,14 @@ describe "In the generated Gtk module" do
         aa = nil
         @builder.connect_signals_full { |*args| aa = args }
         b, o, sn, hn, co, f, ud = aa
+
         assert_instance_of Gtk::Builder, b
         assert_equal b.to_ptr, @builder.to_ptr
         assert_instance_of Gtk::Button, o
         assert_equal "clicked", sn
         assert_equal "on_button_clicked", hn
         _(co).must_be_nil
+
         assert_equal 0, f
         _(ud).wont_be_nil
       end
