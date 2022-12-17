@@ -33,6 +33,8 @@ jobs:
           sudo apt-get install gir1.2-gtk-3.0
           # Provides Gtk-2.0.typelib
           sudo apt-get install gir1.2-gtk-2.0
+          # BUG: Missing dependency of gir1.2-harfbuzz-0.0
+          sudo apt-get install libharfbuzz-gobject0
           # Needed to provide A11y dbus service to silence warnings
           sudo apt-get install at-spi2-core
           # Provides xvfb-run
