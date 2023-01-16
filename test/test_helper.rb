@@ -20,8 +20,6 @@ end
 module BaseTestExtensions
   def assert_nothing_raised
     yield
-
-    assert true
   end
 
   def ref_count(object)
