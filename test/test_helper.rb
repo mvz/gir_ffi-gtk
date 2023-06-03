@@ -11,11 +11,15 @@ require "minitest/autorun"
 
 Thread.abort_on_exception = true
 
-if ENV["GTK_VERSION"] == "2"
-  require "gir_ffi-gtk2"
-else
-  require "gir_ffi-gtk3"
+unless defined? Gtk
+  if ENV["GTK_VERSION"] == "2"
+    require "gir_ffi-gtk2"
+  else
+    require "gir_ffi-gtk3"
+  end
 end
+
+warn "Testing with Gtk version #{Gtk::MAJOR_VERSION}.#{Gtk::MINOR_VERSION}"
 
 module BaseTestExtensions
   def assert_nothing_raised
