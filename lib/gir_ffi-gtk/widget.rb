@@ -4,7 +4,7 @@ module GirFFIGtk
   # Overrides for GtkWidget methods
   module WidgetOverrides
     def add_events(events)
-      super Gdk::EventMask.to_int events
+      super(Gdk::EventMask.to_int events)
     end
 
     def get_events
@@ -12,7 +12,7 @@ module GirFFIGtk
     end
 
     def set_events(events)
-      super Gdk::EventMask.to_int events
+      super(Gdk::EventMask.to_int events)
     end
   end
 end

@@ -4,7 +4,7 @@ module GirFFIGtk
   # Overrides for GtkAction
   module ActionOverrides
     def create_icon(icon_size)
-      super Gtk::IconSize.to_int(icon_size)
+      super(Gtk::IconSize.to_int(icon_size))
     end
   end
 end

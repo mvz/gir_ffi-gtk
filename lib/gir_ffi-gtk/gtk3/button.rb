@@ -4,7 +4,7 @@ module GirFFIGtk
   # Overrides for GtkAction class methods
   module ButtonClassOverrides
     def new_from_icon_name(icon_name, size)
-      super icon_name, Gtk::IconSize.to_int(size)
+      super(icon_name, Gtk::IconSize.to_int(size))
     end
   end
 end
