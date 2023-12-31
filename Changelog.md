@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.17.0 / 2023-12-31
+
+* Drop support for Ruby 2.7 ([#129] by [mvz])
+* Depend on GirFFI 0.17.0 ([#130] by [mvz])
+
+[mvz]: https://github.com/mvz
+
+[#129]: https://github.com/mvz/gir_ffi-gtk/pull/129
+[#130]: https://github.com/mvz/gir_ffi-gtk/pull/130
+
 ## 0.16.0 / 2022-05-21
 
 * Drop support for Ruby 2.6 and JRuby
