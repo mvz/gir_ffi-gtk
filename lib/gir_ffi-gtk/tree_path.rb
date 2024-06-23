@@ -5,7 +5,7 @@ module Gtk
   # Add non-introspected function to Gtk::Lib
   module Lib
     if Gtk::MAJOR_VERSION == 2 || Gtk::MAJOR_VERSION == 3 && Gtk::MINOR_VERSION < 12
-      attach_function :gtk_tree_path_new_from_indices, [:varargs], :pointer
+      attach_function :gtk_tree_path_new_from_indices, [:int, :varargs], :pointer
     end
   end
 
@@ -19,8 +19,9 @@ module Gtk
       end
 
       def initialize_from_indices(indices)
-        args = indices.flat_map { |index| [:int, index] }
-        ptr = Gtk::Lib.gtk_tree_path_new_from_indices(*args, :int, -1)
+        head, *rest = *indices
+        args = rest.flat_map { |index| [:int, index] }
+        ptr = Gtk::Lib.gtk_tree_path_new_from_indices(head, *args, :int, -1)
         store_pointer ptr
       end
     end
