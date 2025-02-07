@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.18.0 / 2025-02-07
+
+* Use correct function signature for gtk_tree_path_new_from_indices ([#133] by [mvz])
+* Support Ruby 3.1 through 3.4, dropping support for Ruby 3.0 ([#137] by [mvz])
+* Update gir_ffi dependency to version 0.18.0 ([#138] by [mvz])
+
+[#133]: https://github.com/mvz/gir_ffi-gtk/pull/133
+[#137]: https://github.com/mvz/gir_ffi-gtk/pull/137
+[#138]: https://github.com/mvz/gir_ffi-gtk/pull/138
+
 ## 0.17.0 / 2023-12-31
 
 * Drop support for Ruby 2.7 ([#129] by [mvz])
