@@ -28,6 +28,7 @@ describe "An exception in a callback" do
         end
         # Guard against runaway loop
         @guard = GLib.timeout_add(GLib::PRIORITY_DEFAULT, 1000) { Gtk.main_quit }
+
         _(-> { Gtk.main }).must_raise CallbackTestException
       end
 
@@ -45,6 +46,7 @@ describe "An exception in a callback" do
         end
         # Guard against runaway loop
         @guard = GLib.timeout_add(GLib::PRIORITY_DEFAULT, 1000) { Gtk.main_quit }
+
         _(-> { Gtk.main }).must_raise CallbackTestException
       end
 

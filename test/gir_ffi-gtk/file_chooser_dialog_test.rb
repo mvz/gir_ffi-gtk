@@ -6,6 +6,7 @@ describe Gtk::FileChooserDialog do
   describe ".new" do
     it "creates a Gtk::FileChooserDialog with the right attributes" do
       dialog = Gtk::FileChooserDialog.new "Foo", nil, :save, [["Bar", :yes]]
+
       _(dialog.title).must_equal "Foo"
       _(dialog.action).must_equal :save
       button =
@@ -14,6 +15,7 @@ describe Gtk::FileChooserDialog do
         else
           dialog.action_area.children.to_a.last
         end
+
       _(button.label).must_equal "Bar"
       _(dialog.response_for_widget(button)).must_equal Gtk::ResponseType.to_int(:yes)
     end

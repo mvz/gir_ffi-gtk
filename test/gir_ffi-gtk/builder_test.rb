@@ -43,6 +43,7 @@ describe Gtk::Builder do
       end
       button = builder.get_object("foo")
       GObject.signal_emit button, "clicked"
+
       _(name).must_equal "on_button_clicked"
     end
 
@@ -65,6 +66,7 @@ describe Gtk::Builder do
         end
         button = builder.get_object("foo")
         GObject.signal_emit button, "clicked"
+
         _(name).must_equal "handler_after"
       end
     end

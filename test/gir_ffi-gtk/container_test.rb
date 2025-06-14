@@ -24,11 +24,13 @@ describe Gtk::Container do
     it "fetches the given child property" do
       container.add widget
       container.child_set_property(widget, "left-attach", 1)
+
       _(container.child_get_property(widget, "left-attach")).must_equal 1
     end
 
     it "raises an ArgumentError for unknown properties" do
       container.add widget
+
       _(proc { container.child_get_property(widget, "foobar") }).must_raise ArgumentError
     end
   end
