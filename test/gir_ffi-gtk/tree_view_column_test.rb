@@ -24,11 +24,13 @@ describe Gtk::TreeViewColumn do
       row = list_store.append
       list_store.set_value(row, 1, "foo-value")
       column.cell_set_cell_data(list_store, row, false, false)
+
       _(renderer.text).must_equal "foo-value"
     end
 
     it "allows not specifying any attributes" do
       col = Gtk::TreeViewColumn.new_with_attributes("foo-title", renderer)
+
       _(col).must_be_instance_of Gtk::TreeViewColumn
     end
   end
@@ -47,6 +49,7 @@ describe Gtk::TreeViewColumn do
       row = list_store.append
       list_store.set_value(row, 1, "foo-value")
       column.cell_set_cell_data(list_store, row, false, false)
+
       _(renderer.text).must_equal "foo-value"
     end
   end

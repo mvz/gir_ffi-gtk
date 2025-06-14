@@ -20,7 +20,9 @@ class TestProvider < GObject::Object
     1
   end
 
-  def match(_context)
+  # TODO: Allow method name and vfunc name to be different, so this method can
+  # be renamed to #match?
+  def match(_context) # rubocop:disable Naming/PredicateMethod
     true
   end
 
