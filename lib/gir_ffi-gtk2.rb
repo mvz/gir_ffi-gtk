@@ -4,6 +4,8 @@ require "gir_ffi"
 
 GirFFI.setup :Gtk, "2.0"
 
+raise "Unexpected major Gtk+ version #{Gtk::MAJOR_VERSION}" if Gtk::MAJOR_VERSION != 2
+
 require "gir_ffi-gtk/base"
 require "gir_ffi-gtk/version"
 
