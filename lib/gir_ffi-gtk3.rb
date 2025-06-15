@@ -4,6 +4,9 @@ require "gir_ffi"
 
 GirFFI.setup :Gtk, "3.0"
 
+raise "Unexpected major Gtk+ version #{Gtk::MAJOR_VERSION}" if Gtk::MAJOR_VERSION != 3
+raise "Gtk+ version 3.#{Gtk::MINOR_VERSION} is not supported" if Gtk::MINOR_VERSION < 12
+
 require "gir_ffi-gtk/base"
 require "gir_ffi-gtk/version"
 

@@ -4,14 +4,14 @@ Gtk.load_class :TreePath
 module Gtk
   # Add non-introspected function to Gtk::Lib
   module Lib
-    if Gtk::MAJOR_VERSION == 2 || Gtk::MAJOR_VERSION == 3 && Gtk::MINOR_VERSION < 12
+    if Gtk::MAJOR_VERSION == 2
       attach_function :gtk_tree_path_new_from_indices, [:int, :varargs], :pointer
     end
   end
 
   # Overrides for GtkTreePath
   class TreePath
-    if Gtk::MAJOR_VERSION == 2 || Gtk::MAJOR_VERSION == 3 && Gtk::MINOR_VERSION < 12
+    if Gtk::MAJOR_VERSION == 2
       def self.new_from_indices(*args)
         obj = allocate
         obj.send :initialize_from_indices, *args

@@ -5,7 +5,7 @@ require "test_helper"
 describe Gtk::Button do
   describe ".new_from_icon_name" do
     before do
-      skip if Gtk::MAJOR_VERSION == 2 || Gtk::MAJOR_VERSION == 3 && Gtk::MINOR_VERSION < 10
+      skip if Gtk::MAJOR_VERSION == 2
     end
 
     it "works when called with a symbol" do
