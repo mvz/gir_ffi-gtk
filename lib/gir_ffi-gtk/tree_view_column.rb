@@ -6,9 +6,9 @@ module Gtk
   class TreeViewColumn
     setup_method! :new
 
-    def self.new_with_attributes(*args)
+    def self.new_with_attributes(*)
       obj = allocate
-      obj.send :initialize_with_attributes, *args
+      obj.send(:initialize_with_attributes, *)
       obj
     end
 

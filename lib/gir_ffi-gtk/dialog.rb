@@ -13,9 +13,9 @@ module Gtk
 
   # Overrides for GtkDialog
   class Dialog
-    def self.new_with_buttons(*args)
+    def self.new_with_buttons(*)
       obj = allocate
-      obj.send :initialize_with_buttons, *args
+      obj.send(:initialize_with_buttons, *)
       obj
     end
 

@@ -10,9 +10,9 @@ module Gtk
 
   # Overrides for GtkRadioButton
   class RadioButton
-    def self.new_from_widget(*args)
+    def self.new_from_widget(*)
       obj = allocate
-      obj.send :initialize_from_widget, *args
+      obj.send(:initialize_from_widget, *)
       obj
     end
 

@@ -9,9 +9,9 @@ module Gtk
 
   # Overrides for GtkTreePath
   class TreePath
-    def self.new_from_indices(*args)
+    def self.new_from_indices(*)
       obj = allocate
-      obj.send :initialize_from_indices, *args
+      obj.send(:initialize_from_indices, *)
       obj
     end
 
