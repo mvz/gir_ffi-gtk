@@ -13,9 +13,9 @@ module Gtk
 
   # Overrides for GtkFileChooserDialog
   class FileChooserDialog
-    def self.new(*args)
+    def self.new(*)
       obj = allocate
-      obj.send :initialize, *args
+      obj.send(:initialize, *)
       obj
     end
 
