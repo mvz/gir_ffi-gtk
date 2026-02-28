@@ -57,7 +57,7 @@ module GirFFIGtk
 end
 
 # Overrides for Gtk module functions
-module Gtk
+Gtk.module_eval do
   setup_method! "init"
   setup_method! "main"
 
