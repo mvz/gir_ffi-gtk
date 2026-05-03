@@ -3,11 +3,24 @@
 All notable changes to this project will be documented in this file. See the
 Git log for all changes.
 
+## 0.19.0 / 2026-05-03
+
+* Drop support for old minor versions of Gtk+ 3 ([#146] by [mvz])
+* Support Ruby 3.2 through 4.0, dropping support for Ruby 3.1
+  ([#147] and [#152] by [mvz])
+* Update `gir_ffi` dependency to version 0.19.0 ([#156] by [mvz])
+
+[#146]: https://github.com/mvz/gir_ffi-gtk/pull/146
+[#147]: https://github.com/mvz/gir_ffi-gtk/pull/147
+[#152]: https://github.com/mvz/gir_ffi-gtk/pull/152
+[#156]: https://github.com/mvz/gir_ffi-gtk/pull/156
+
 ## 0.18.0 / 2025-02-07
 
-* Use correct function signature for gtk_tree_path_new_from_indices ([#133] by [mvz])
+* Use correct function signature for `gtk_tree_path_new_from_indices`
+  ([#133] by [mvz])
 * Support Ruby 3.1 through 3.4, dropping support for Ruby 3.0 ([#137] by [mvz])
-* Update gir_ffi dependency to version 0.18.0 ([#138] by [mvz])
+* Update `gir_ffi` dependency to version 0.18.0 ([#138] by [mvz])
 
 [#133]: https://github.com/mvz/gir_ffi-gtk/pull/133
 [#137]: https://github.com/mvz/gir_ffi-gtk/pull/137
